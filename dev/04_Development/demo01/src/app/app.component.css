@@ -6,6 +6,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#notes{
+  text-align: center;
+  color: red;
+  font-size: 24px;
+}
 
 h1,
 h2,
@@ -45,8 +50,11 @@ p {
 }
 
 .content #left{
+  background-color: #f5e0d3;
+
+  border-radius: 15px;
   border: 1px solid grey;
-  width: 200px;
+  width: 300px;
   height: 500px;
   position: absolute;
   left: 10px;
@@ -54,19 +62,23 @@ p {
   padding: 9px 9px 9px 9px;
 }
 .content #leftTop{
-
+  border-radius: 15px;
+  background-color: #FFFFFF;
   border: 1px solid grey;
-  width: 200px;
+  width: 300px;
   height: 240px;
   display: inline-block;
 }
 .content #leftBottom{
+  border-radius: 15px;
+  background-color: #FFF;
   border: 1px solid grey;
-  width: 200px;
+  width: 300px;
   height: 230px;
   display: inline-block;
 }
 .content #middle{
+  border-radius: 15px;
   border: 1px solid grey;
   width: 800px;
   height: 500px;
@@ -75,16 +87,23 @@ p {
   position: relative;
 }
 .content #right{
+
+  background-color: #FFF;
+  border-radius: 15px;
   border: 1px solid grey;
-  width: 200px;
+  width: 300px;
   height: 500px;
   display: inline-block;
   position: absolute;
   right: 10px;
+
+  flex-direction: column;
+  align-items: center;
 }
 
 
 .content {
+
   position: absolute;
   top: 60px;
   left: 0;
@@ -108,6 +127,10 @@ svg.material-icons:not(:last-child) {
 }
 
 #middle #special{
+  font-size: 11px;
+  text-align: left;
+  border-radius: 15px;
+  background-color: #c1d7db;
   position: absolute;
   right: 10px;
   top: 80px;
