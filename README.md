@@ -1,4 +1,4 @@
-# Make Painful, painful.
+# Make Painful, painful (TBD- could change later)
 'Make **Painful**, painful' is an interactive website that allows you to become more aware of the impact of bad postures and the underlining health implications of a Sedentary lifestyle. (For students, office workers, essentially everyone going through this lockdown)
 
 
