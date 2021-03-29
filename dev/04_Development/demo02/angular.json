@@ -1,14 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": false
+    "analytics": "38b04ab0-78f0-4901-8d5e-9d5ffccc7064"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo01": {
+    "demo02": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -16,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo01",
+            "outputPath": "dist/demo02",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -49,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -64,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "demo01:build"
+            "browserTarget": "demo02:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "demo01:build:production"
+              "browserTarget": "demo02:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo01:build"
+            "browserTarget": "demo02:build"
           }
         },
         "test": {
@@ -112,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "demo01:serve"
+            "devServerTarget": "demo02:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "demo01:serve:production"
+              "devServerTarget": "demo02:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "demo01"
+  "defaultProject": "demo02"
 }

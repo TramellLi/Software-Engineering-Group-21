@@ -1,5 +1,19 @@
 <link rel="stylesheet" href="app.component.css">
 
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/bar-chart">Bar Chart</a>
+    </li>
+  </ul>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img width="40" alt="Logo" src="../images/logo.jpeg"/>
@@ -51,7 +65,7 @@
 </div>
 <div id="right">
   // votes and charts area
-  <br>
+  <br/>
   <div>
     <img src="../images/demo1_votes.png" alt="1" width="280" height="130" border-radius="15px" align="center">
   </div>
