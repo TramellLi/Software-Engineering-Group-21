@@ -1,0 +1,13 @@
+<p>Test: bar-chart works!</p>
+<div id="barText" *ngFor="let vote of votes">
+  {{vote.name}}
+  <div id="barLen" >
+    <span *ngIf="vote.voteNum==1">&nbsp;</span>
+    <span *ngIf="vote.voteNum==2">&nbsp;&nbsp;</span>
+    <span *ngIf="vote.voteNum==3">&nbsp;&nbsp;&nbsp;</span>
+    <span *ngIf="vote.voteNum==4">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span *ngIf="vote.voteNum==5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span *ngIf="vote.voteNum==6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span *ngIf="vote.voteNum==7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>

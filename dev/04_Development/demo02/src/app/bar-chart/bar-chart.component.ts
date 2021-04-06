@@ -14,12 +14,12 @@ export class BarChartComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels = ['head', 'neck', '...', '...', '..', '.', '...', '..', '.', '...', '...', '..', '.', '...'];
   public barChartType = 'horizontalBar';
   public barChartLegend = true;
   public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {data: [6, 5, 8, 8, 5, 5, 4, 6, 5, 4, 4, 6, 5, 4], label: 'Votes'},
+    // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
   ];
 
   stats: any = [];
