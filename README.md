@@ -19,11 +19,22 @@ We figured that we could come up with an easy and comprehensive guide in the for
 
 Our website is not your regular fitness&training website, nor is it another webisite loaded with heavy medical terms intended only for medics or physiotherapists to visit. It is going to be a simple and comprehensive guide involving the silhouette of a human body with certain parts, when being clicked will provide users with the **name**, **description of pain**, **causes of pain**, and a **list of possible solutions**.  
     
+    
 **[User Research]**
+
+
 **[Prototype Design]**
+
+
 **[Display Design]**
+
+
 **[Development]**
+
+
 **[Test]**
+
+
 **[Iteration]**
 
 
