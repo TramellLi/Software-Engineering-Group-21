@@ -20,16 +20,18 @@
   }
 
   #body_left{
+    border-radius: 45px;
     position: fixed;
     height: 800px;
-    width: 30%;
+    width: 500px;
     float: left;
     background-color: rgb(238,233,233);
+    z-index: 998;
   }
 
   #body_right{
     position: relative;
-    height: 900px;
+    height: 800px;
     width: 70%;
     /*background-color: rgb(245,245,245);*/
     background-color: #FFFFFF;
@@ -43,4 +45,8 @@
     clear: both;
     font-size: 14px;
     font-family: Arial;
+
+    position: fixed;
+    bottom : 30px;
+
   }
