@@ -1,7 +1,6 @@
 
 # Background and Motivation:
----------------------------------------
-&nbsp;
+
 
 Injuries resulting from sitting for a long period of time are a serious occupational health and safety problem. Even though sitting down requires less muscular effort, it does not exempt people from the injury risks usually associated with more physically demanding tasks. For example, clerks, developers who work in a sitting position all tend to suffer from backpain, muscle tenderness and aches[[2]]. This is because once you are used to not moving much, ‘muscle breakdown can start in as little as 24 hours, and aches and pains will start to creep in.’ Dr.Richard Yoon [[1]], chief of orthopaedics at Jersey City Medical centre in New Jersey stated. 
 
