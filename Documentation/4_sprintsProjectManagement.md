@@ -66,7 +66,7 @@ Waterfall model insists that teams wait until implementation finishes before sta
 UT-testing
 UAT -testing
 
-
+To be continued... 
 
 
 
@@ -74,3 +74,4 @@ UAT -testing
 [System Implementation]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/2_systemImplementation.md
 [dev branch]: https://github.com/TramellLi/Software-Engineering-Group-21/tree/dev 
 [UX Design]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/3_uxDesign.md
+[ here ]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/proposal.md
