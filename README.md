@@ -26,21 +26,7 @@ We figured that we could come up with an easy and comprehensive guide in the for
 
 Our website is not your regular fitness&training website, nor is it another webisite loaded with heavy medical terms intended only for medics or physiotherapists to visit. It is going to be a simple and comprehensive gui$
 
-**[User Research]**
 
-**[Prototype Design]**
-
-**[Display Design]**
-
-**[Development]**
-
-**[Test]**
-
-**[Iteration]**
-
-
-
-[Click here] to see a paper prototype of our website
 
 
 [User Research]:https://github.com/TramellLi/Software-Engineering-Group-21/tree/dev/dev/01_User_Research
