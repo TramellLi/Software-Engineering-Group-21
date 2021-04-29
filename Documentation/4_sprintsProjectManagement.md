@@ -20,23 +20,30 @@ According to this model, project would not be able to proceed until the first st
 ![Project Timeline](https://i.imgur.com/jTQ9ymh.png=centerme)
 
 **1. Idea pitching and define requirement (11/02 – 09/03)**
-We started off with brainstorming and idea pitching and have steered towards creating an a health-related Single-age application. Over the course of the following weeks, we have decided to shrink the scope of our product down to a postural-related occupational diseases/discomfort body map for office workers. With the rough idea in mind, group members were set off to do some research on currently available health-related apps for inspirations, helping us to finally decide on decide what sections to include in our single webpage application. 
+We started off with brainstorming and idea pitching and have steered towards creating an a health-related Single-age application. Over the course of the following weeks, we have decided to shrink the scope of our product down to a postural-related occupational diseases/discomfort body map for office workers. With the rough idea in mind, group members were set off to do some research on currently available health-related apps for inspirations, helping us to finally decide on what sections to include in our single webpage application. 
 
 Please click [ here ] to see our proposal.
 
 **2. Product design (28/02 – 15/03)**
-After research we have agreed to divide our website into four big sections: 
+After research we have agreed to divide our website into four big sections (for more design details, please see [[UX Design]] ): 
 1) Headers sections:
-	Product Name
-	Logo
+	- Product Name
+	- Logo
 2) Barchart section:
-	Bar chart that demonstrates voting statistics
+	- Bar chart that demonstrates voting statistics
+	- Is to receive data from back-end
 3) Mainbody section:
-	Human body diagram
-	Clickable areas on human body
-	Popup window when areas are clicked
+	- Human body diagram
+	- Clickable areas on human body
+	- Popup window when areas are clicked
 4) Footer section:
-	Disclaimer text
+	- Disclaimer text
+
+This is one of the very first few drafts of how the website would look like:
+![Waterfall](https://i.imgur.com/QBdys5i.png=centerme)
+
+
+
 	
 Team members have decided to use MEAN stack to realize our project and have assigned roles to team members:
 
@@ -48,8 +55,8 @@ Team members have decided to use MEAN stack to realize our project and have assi
 **3. Implementation(10/03-30/04):**
 
 Parallel working and code sharing with our Frond-end and Back-end coders.
-Building docker file, and different versions of code has been uploaded to our dev branch
-A few implementations have deviated from the original design of our project because we overestimated our ability to build the project, and in trying to solve issues such as linking up the Front-end and Back-end, we have pushed our schedules for UAT testing back by 7 days, from 04/21 to 30/04.
+Building docker file, and different versions of code has been uploaded to our [dev branch] .
+A few implementations have deviated from the original design of our project and in trying to solve issues such as linking up the Front-end and Back-end, we have pushed our schedules for UAT testing back by 7 days, from 04/21 to 30/04. And details for solving issues please see [System Implementation] .
 
 Waterfall model insists that teams wait until implementation finishes before starting the UAT-testing, which would lead to have a small window of time left to do a large revision of our product.
 
@@ -59,11 +66,11 @@ Waterfall model insists that teams wait until implementation finishes before sta
 UT-testing
 UAT -testing
 
-TO be continued.....
-
 
 
 
 
 
 [System Implementation]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/2_systemImplementation.md
+[dev branch]: https://github.com/TramellLi/Software-Engineering-Group-21/tree/dev 
+[UX Design]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/3_uxDesign.md
