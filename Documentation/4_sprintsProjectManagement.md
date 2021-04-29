@@ -59,6 +59,8 @@ Waterfall model insists that teams wait until implementation finishes before sta
 UT-testing
 UAT -testing
 
+TO be continued.....
+
 
 
 
