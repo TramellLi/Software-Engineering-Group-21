@@ -5,6 +5,7 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const db =  require('./db')
+var {mongoose, User} = require("./mongoose")
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -83,3 +84,15 @@ const server = http.createServer(app);
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 
 module.exports = app;
+
+server.on('request', (request, response) => {
+   console.log(`server request route：${request.url}`)
+   switch(request.url){
+      case '/': {
+         response.write(`/`)
+      break;
+      }
+   }
+   response.end()
+})
+
