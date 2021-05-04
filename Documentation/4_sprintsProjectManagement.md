@@ -13,14 +13,14 @@ Here are the 3 key principles of the WaterFall model:
 
 
 
-According to this model, project would not be able to proceed until the first step is complete, so when problems arise, it will be brought to attention right away, forcing team members to react right away and to refine tasks of each stage before proceeding. This is especially apparent with the first stage of our project where we took our time in identifying deliverables and requirments of our product, however later on in the implementation stage we also ran into technical issues causing us to go back and review our design and to slightly push our schedule back to allow more time to find new approaches.  (Details issues encountered will be found in [ [System Implementation] ] )
+According to this model, project would not be able to proceed until the first step is complete, so when problems arise, it will be brought to attention right away, forcing team members to react right away and to refine tasks of each stage before proceeding. This is especially apparent with the first stage of our project where we took our time in identifying deliverables and requirments of our product, however later on in the implementation stage we also ran into technical issues causing us to go back and review our design and to slightly push our schedule back to allow more time to find new approaches.  (Details of implementation and issues encountered will be found in [ [System Implementation] ] )
 
 
 
 ![Project Timeline](https://i.imgur.com/jTQ9ymh.png=centerme)
 
 **1. Idea pitching and define requirement (11/02 – 09/03)**
-We started off with brainstorming and idea pitching and have steered towards creating an a health-related Single-age application. Over the course of the following weeks, we have decided to shrink the scope of our product down to a postural-related occupational diseases/discomfort body map for office workers. With the rough idea in mind, group members were set off to do some research on currently available health-related apps for inspirations, helping us to finally decide on what sections to include in our single webpage application. 
+We started off with brainstorming and idea pitching and have steered towards creating an a health-related Single-page application. Over the course of the following weeks, we have decided to shrink the scope of our product down to a postural-related occupational diseases/discomfort body map for office workers. With the rough idea in mind, group members were set off to do some research on currently available health-related apps for inspirations, helping us to finally decide on what sections to include in our single webpage application. 
 
 Please click [ here ] to see our proposal.
 
