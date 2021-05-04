@@ -1,0 +1,31 @@
+<div id="body_left">
+  <div style="display: block; width: 500px;" >
+    <canvas baseChart width="2" height="3"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            [colors]="barChartColors">
+    </canvas>
+  </div>
+
+
+</div>
+<div *ngFor="let stat of stats" id="btn">
+  <input type="button" value="{{stat}}">
+</div>
+
+
+<div id="body_right">
+<!--  <img src="../../assets/body.png" alt="123" height="800px" width="620px">-->
+<app-main-body></app-main-body>
+
+</div>
+
+<div id="card-right">
+
+</div>
+
+

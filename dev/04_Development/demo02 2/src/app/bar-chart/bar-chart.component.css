@@ -1,0 +1,148 @@
+
+
+canvas{
+  height: 1000px;
+  width: 400px;
+}
+
+#body_left{
+  display: inline-block;
+  border-radius: 45px;
+  height: 800px;
+  width: 500px;
+  min-width: 500px;
+  background-color: rgb(238,233,233);
+}
+
+#body_right{
+  display: inline-block;
+  border-radius: 45px;
+  height: 800px;
+  width: 600px;
+  min-width: 620px;
+  vertical-align: top;
+  /*background-color: rgb(245,245,245);*/
+  background-color: #FFFFFF;
+
+}
+
+#card-right{
+  height: 800px;
+  width: 500px;
+  min-width: 500px;
+  display: inline-block;
+  border: red solid 1px;
+  vertical-align: top;
+
+}
+
+#img1{
+  z-index:1;
+  position:relative;
+  left:100px;
+  top:0px;
+}
+
+.s1{
+  z-index: 1000;
+  position: absolute;
+  display: none;
+}
+.s2{
+  z-index: 1001;
+  position: relative;
+  display: none;
+}
+.s3{
+  z-index: 1002;
+  position: relative;
+  display: none;
+}
+.s4{
+  z-index: 1003;
+  position: relative;
+  display: none;
+}
+.s5{
+  z-index: 1004;
+  position: relative;
+  display: none;
+}
+.s6{
+  z-index: 1005;
+  position: relative;
+  display: none;
+}
+
+.circle1{
+  vertical-align: top;
+  z-index: 100;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 370px;
+  top: 140px;
+}
+
+.circle2{
+  z-index: 101;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 200px;
+  top: 130px;
+}
+
+.circle3{
+  z-index: 102;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 380px;
+  top: 300px;
+}
+
+.circle4{
+  z-index: 103;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 390px;
+  top: 360px;
+}
+
+.circle5{
+  z-index: 104;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 185px;
+  top: 425px;
+}
+
+.circle6{
+  z-index: 105;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+  position: relative;
+  left: 405px;
+  top: 575px;
+}

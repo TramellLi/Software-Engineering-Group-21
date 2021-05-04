@@ -1,11 +1,29 @@
-<div>
-  <div style="display: block; width: 500px;">
-    <canvas baseChart width="2" height="3"
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType">
-    </canvas>
-  </div>
+
+<div style="display: inline-block; width: 500px; " >
+  <canvas baseChart width="2" height="3"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="barChartColors">
+  </canvas>
 </div>
+
+<div style="display: inline-block; border: red 1px solid; height: 800px; width: 150px; position: absolute;left: 550px">
+<button *ngFor="let barChartLabel of barChartLabels"
+style="display: block; width: 120px; margin: 50px 0 50px 0; height: 40px; border-radius: 5px"
+        (click)="clkbtn(barChartLabel)"
+
+
+>
+  {{barChartLabel}}
+</button>
+</div>
+
+
+
+
+
+

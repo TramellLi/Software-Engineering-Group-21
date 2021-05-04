@@ -1,6 +1,22 @@
+#votesBar{
+  background-color: #80808030;
+  height: auto;
+  width: auto;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  height:auto !important;
+
+  min-height:344px;
+}
 .areas{
   text-align: center;
-
 }
 
 #header{
@@ -19,28 +35,9 @@
   color: #46505a;
 }
 
-#body_left{
-  border-radius: 45px;
-  position: fixed;
-  height: 800px;
-  width: 500px;
-  float: left;
-  background-color: rgb(238,233,233);
-  z-index: 998;
-}
 
-#body_right{
-  border-radius: 45px;
-  position: relative;
-  height: 800px;
-  width: 70%;
-  /*background-color: rgb(245,245,245);*/
-  background-color: #FFFFFF;
-  float: right;
-
-}
 #footer{
-  margin: 100px 200px 0 200px;
+  margin: 10px 200px 0 200px;
   height: 60px;
 
   clear: right;
@@ -48,5 +45,42 @@
   font-family: Arial;
 
   position: relative;
-  top: 30px;
+  top: 10px;
+}
+
+#votesBarBox{
+  min-width: 1620px;
+
+}
+
+#body_left{
+  display: inline-block;
+  border-radius: 45px;
+  height: 800px;
+  width: 700px;
+  min-width: 500px;
+  background-color: rgb(238,233,233);
+}
+
+#body_right{
+  display: inline-block;
+  position: relative;
+  border-radius: 45px;
+  height: 800px;
+  width: 30%;
+  min-width: 620px;
+  vertical-align: top;
+  /*background-color: rgb(245,245,245);*/
+  background-color: #FFFFFF;
+
+}
+
+#card-right{
+  height: 800px;
+  width: 500px;
+  min-width: 500px;
+  display: inline-block;
+  border: red solid 1px;
+  vertical-align: top;
+
 }
