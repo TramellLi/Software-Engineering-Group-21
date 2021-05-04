@@ -6,6 +6,7 @@
 We have decided very early on that our product was going to be a health-related app as it was inspired by one of our team member’s visits to the orthopedic doctor to checkout his persistent back pain. Knowing that there are already other educational apps for professionals working in the field to use, we wanted mainly to target users that have no medical background to use our product, like your team member – people who work in offices, students who do not necessarily have prior experience or interest in sports & exercise medicine, this would mean that our website needs to be simple to navigate and the content& explanation of body parts would need to be succinct and accurate.  
 
 Having had an idea of our project that all group members really liked from early an early stage allowed us to start discovering possible problems that  we  will want to solve with our deliverables, and we decided to use questionnaires to help identify and confirm our target user and problembs that our product could help to solve. 
+
 ![questionnaire](https://i.imgur.com/1esDziA.png=centerme)
 
 Our questionnaire aims get us an idea of the age group of potential user and the numbers of hours they spend everyday in front of a desk, and whether or not they have sought for medical help as well as their awareness and interest of these health related app. 
