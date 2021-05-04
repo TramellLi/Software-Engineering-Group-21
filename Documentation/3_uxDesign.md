@@ -21,11 +21,13 @@ We have collected answers from people in both their 20s and 30s, and all of thes
 
 
 - most people work on a desk experience discomfort
-- people are in pain but are not aware that they could look up self-help videos/tutorials onlin. 
-- lack of exposure to self-help option – misconception sports != medicine
-- lack of exposure-> caused lack of interest in sports medicine
- “ I do not have time to always book myself in for consultation”
- “ my doctor has told me that I should move around more, or stretch more, but without telling me specifically what to do, most of the time I do not even know where to start looking”
+- people are in pain but are not aware that they could look up self-help videos/tutorials online. 
+- lack of exposure to self-help option leading to the misconception that doing targeted exercises will not help with the posture and fix pain.
+- lack of exposure to self-help option -> lack of interest in sports medicine
+
+Here are some comments that we have gathered from our potential users: 
+ “ I do not have time to always book myself in for consultation, just live with my pain, I wish I could look up for some advice but it will cost me alot of time since anything related to medicine and sciences demands a lot of time to study in order to get your head around it. Plus I don't even know where to start looking”
+ “ my doctor has told me that I should move around more, or stretch more but I am already in so much pain, I do not believe that moving around more will help me to fix my problem”
 
 
 
@@ -39,13 +41,13 @@ Sports medical professional (he takes a guiding role in helping us to decide wha
 **Define-issues:** 
 -	How do we increase the general people's(the non-medics) awareness on the importance of posture.
 -	How do we trigger the their interest in wanting to finding out more about self-help and sports medicine to ease discomfort resulted from sitting down for too long. 
--	How to we make it easier for the them to start understanding the basic subject knowledges. 
+-	How to we make it easier for the them to start understanding the basic subject knowledges with the short amount of time they have. 
 	
 #### Solve: issues:
--	Our webpage need to be straight forward, simple colors and navigation 
+-	Our app need to be straight forward, simple colors and navigation 
 -	Design and drawing need to be cute and simple, diagram of human body should be minimalistic and not overly complicated to put people off from wanting to continue to explore. differ from apps that target at educational apps target at l professionals
 -	With simple and cute human body diagram, the information that we decide to display need to be succinct but also as accurate as possible (need someone professional from the field to consult and decide what information to put/omit) to give our target users a general idea of body parts and muscle groups related to the discomfort. 
-
+This is one of the early prototypes of our design: 
 <p align="center">
   <img src="https://i.imgur.com/PwdRkUq.gif" alt="animated" />
 </p>
