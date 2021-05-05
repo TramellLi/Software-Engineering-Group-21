@@ -39,6 +39,14 @@ Office workers
 Anyone who feels uncomfortable when using computer for a long time 
 Sports medical professional (he takes a guiding role in helping us to decide what information to include or omit, ensures that the website content stays as accurate as possible)
 
+Here are the user stories from people that we have interiewed. 
+
+![User story1](https://i.imgur.com/dxJViF4.jpg=centerme)
+![User story2](https://i.imgur.com/VpwU8bW.jpg=centerme)
+
+
+
+
 **Define-issues:** 
 -	How do we increase the general people's(the non-medics) awareness on the importance of posture.
 -	How do we trigger the their interest in wanting to finding out more about self-help and sports medicine to ease discomfort resulted from sitting down for too long. 
@@ -63,7 +71,8 @@ This is one of the early prototypes of our design:
 **Aesthetic and minimalist design**: Keeping clutter to a minimum. All unnecessary information competes for the user’s limited attentional resources is kept at minimal, which inhibit user’s memory retrieval of relevant information – this is why we are only using a minimalist human-shaped model rather than a detailed version of human anatomy diagram. Similarly, the general tone and colour is also used sparingly, so that our user’s attention can be called to learn a bit more about postural related discomfort. 
  
 
-This is a mid-fidelity wireframe of our app, therefore the fonts and the exact scale of the layouts and sections of the app do not measure up to real scale. The typograph and imagery and actual local are not part of this wireframe. It main purporse is to represent the information hierachy and to show how the app should function.  
+This is a mid-fidelity wireframe of our app, therefore the fonts and the exact scale of the layouts and sections of the app do not measure up to real scale. The typograph and imagery and actual local are not part of this wireframe. It main purporse is to represent the information hierachy and to show how the app should function.  （click on the wireframe for a clearer version of the wireframe）
 
 ![questionnaire](https://i.imgur.com/VtMEwK5.jpg=centerme)
+
 
