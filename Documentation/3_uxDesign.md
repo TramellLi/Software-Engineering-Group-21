@@ -63,7 +63,7 @@ This is one of the early prototypes of our design:
 **Aesthetic and minimalist design**: Keeping clutter to a minimum. All unnecessary information competes for the user’s limited attentional resources is kept at minimal, which inhibit user’s memory retrieval of relevant information – this is why we are only using a minimalist human-shaped model rather than a detailed version of human anatomy diagram. Similarly, the general tone and colour is also used sparingly, so that our user’s attention can be called to learn a bit more about postural related discomfort. 
  
 
+This is a mid-fidelity wireframe of our app, therefore the fonts and the exact scale of the layouts and sections of the app do not measure up to real scale. The typograph and imagery and actual local are not part of this wireframe. It main purporse is to represent the information hierachy and to show how the app should function.  
 
-
-
+![questionnaire](https://i.imgur.com/VtMEwK5.jpg=centerme)
 
