@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { DataService } from '../data.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import {Color, Label} from 'ng2-charts';
+import { Color, BaseChartDirective, Label } from 'ng2-charts';
+// import * as pluginAnnotations from 'chartjs-plugin-annotation';
+
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-bar-chart',
@@ -10,7 +13,9 @@ import {Color, Label} from 'ng2-charts';
 })
 
 export class BarChartComponent implements OnInit {
-  constructor(private dataService: DataService) { }
+
+
+  constructor(private dataService: DataService, public changeDetectorRef: ChangeDetectorRef ) { }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -20,20 +25,22 @@ export class BarChartComponent implements OnInit {
     },
     scales: {
       xAxes: [{
-        ticks: { fontColor: 'white' },
-        gridLines: { color: 'rgba(255,255,255,0.1)' }
+        ticks: { fontColor: 'black' },
+        gridLines: { color: 'rgba(255,255,255,0.1)' },
+        display: false
       }],
       yAxes: [{
-        ticks: { fontColor: 'white' },
-        gridLines: { color: 'rgba(255,255,255,0.1)' }
+        ticks: { fontColor: 'black' },
+        gridLines: { color: 'rgba(255,255,255,0.1)' },
+        display: false
       }]
     },
   };
-  public barChartLabels = ['Head', 'Shoulder', 'Hand', 'Cervical', 'Lumbar', 'eyes', 'upper back', 'atrophy'];
+  public barChartLabels = ['Head', 'Eyes', 'Neck Pain', 'Shoulder', 'Cervical', 'Lumbar', 'Hand', 'Limb Pain', 'Foot'];
   public barChartType = 'horizontalBar';
   public barChartLegend = true;
   public barChartData = [
-    {data: [3, 2, 1, 4, 8, 6, 7, 5], label: 'Vote here if you got same pain'},
+    {data: [3, 2, 1, 4, 8, 6, 7, 5, 8], label: 'Vote if you got same pain by click buttons on the right'},
     // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
   ];
   public barChartPlugins = [];
@@ -44,6 +51,8 @@ export class BarChartComponent implements OnInit {
     },
   ];
 
+  // @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective | undefined;
+  // chart: BaseChartDirective;
   stats: any = [];
   currentdata = null;
   currentIndex = -1;
@@ -73,5 +82,6 @@ export class BarChartComponent implements OnInit {
   clkbtn(barChartLabel: string){
     this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);
     this.barChartData[0].data[this.indexOfBar]++;
+    this.changeDetectorRef.reattach();
   }
 }

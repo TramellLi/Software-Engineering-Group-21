@@ -11,15 +11,21 @@
   </canvas>
 </div>
 
-<div style="display: inline-block; border: red 1px solid; height: 800px; width: 150px; position: absolute;left: 550px">
-<button *ngFor="let barChartLabel of barChartLabels"
-style="display: block; width: 120px; margin: 50px 0 50px 0; height: 40px; border-radius: 5px"
-        (click)="clkbtn(barChartLabel)"
+<div style="display: inline-block;height: 800px; width: 150px; position: absolute;left: 550px">
+  <button *ngFor="let barChartLabel of barChartLabels"
+  style="display: block; width: 120px; margin: 38px 0 37px 0; height: 40px; border-radius: 5px"
+          (click)="clkbtn(barChartLabel)"
 
 
->
-  {{barChartLabel}}
-</button>
+  >
+    {{barChartLabel}}
+  </button>
+</div>
+
+<div style="display: inline-block; height: 700px; width: 300px; margin: 50px;  position: absolute;left: 680px;
+            border-radius: 30px; padding: 20px; background-color: #e9e2e5">
+  <strong>Comments:</strong>
+
 </div>
 
 

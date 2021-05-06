@@ -18,7 +18,7 @@ RUN npm install
 COPY --chown=node:node . .
 
 # Building the website
-#RUN ./node_modules/.bin/ng build
+RUN ./node_modules/.bin/ng build
 
 # Add metadata to the image to describe which port the container is listening on at runtime.
 EXPOSE 3000

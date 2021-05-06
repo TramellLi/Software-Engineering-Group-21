@@ -1,4 +1,4 @@
 {
-  "barChartLabels":["Head","Shoulder","Hand","Cervical","Lumbar","eyes","upper back","Muscle atrophy"],
-  "barChartData":[{"data": [120, 130, 180, 100,120, 130, 180, 700 ], "label": "I Got Same Pain VOTE"}]
+  "barChartLabels":["Head", "Eyes", "Neck Pain", "Shoulder", "Cervical", "Lumbar", "Hand", "Limb Pain", "Foot"],
+  "barChartData":[{"data": [3, 2, 1, 4, 8, 6, 7, 5, 8], "label": "Vote if you got same pain by click buttons on the right"}]
 }
