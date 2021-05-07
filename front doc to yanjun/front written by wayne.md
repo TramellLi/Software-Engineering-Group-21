@@ -9,23 +9,23 @@
 # Outline: 
 
  	1. Main framework: Angular.
-      	1. Angular Introduction
-      	2. Front end Introduction
-      	3. Balance Between those two
+ 	  	1. Angular Introduction
+ 	  	2. Front end Introduction
+ 	  	3. Balance Between those two
  	2. Functionalities of our project
-      	1. body click
-      	2. vote
-      	3. comments
-	3. Layout of the single page web application.
-     	1. bootstrap
-     	2. div
-     	3. table
+ 	  	1. body click
+ 	  	2. vote
+ 	  	3. comments
+ 	3. Layout of the single page web application.
+ 	 	1. bootstrap
+ 	 	2. div
+ 	 	3. table
  	4. Features  implementation
-      	1. positions
-      	2. components
-      	3. codes
+ 	  	1. positions
+ 	  	2. components
+ 	  	3. codes
 
-![SPA info net](/Users/wayne/Desktop/front doc to yanjun/image000.png)
+![SPA info net](./image000.png)
 
 
 
@@ -39,11 +39,11 @@
 
 Angular is an application design framework and development platform for creating efficient and sophisticated sigle-page apps.
 
-![image002](/Users/wayne/Desktop/front doc to yanjun/image002.png)
+![image002](./image002.png)
 
 There are some frameworks at the same level as Angular, like React, Angular uses the browser's DOM, while React uses the virtual DOM. Virtual DOM is a simplified version of DOM. By using the virtual DOM, you can change any element very quickly without having to render the entire DOM. It changes performance from excellent to excellent.
 
-![image-20210506180343126](/Users/wayne/Desktop/front doc to yanjun/image003.png)
+![image-20210506180343126](./image003.png)
 
 Angular the a pretty integrated and mature framework, wihch means it is more powerful but tough to get started for freshmen. We are going to use some basic features from Angurlar 11, which is stable and useful, supported and developed by Google. With the help of that, many processes could be simplified a lot no matter which stage we are. We make using angular easier by making use of Angular CLI tool, representing Command Line Interfaces, in some basic example we know that it could help create folders and files, put the template content into them and setup the configuration file and environment well automatically, which is helpful and friendly to new users but not good for new developers. 
 
@@ -74,13 +74,13 @@ Such as angular.json package.json src node_modules tsconfig.json and so on.
 
 **IMAGE: workspace configuration files**
 
-![image-20210506214315625](/Users/wayne/Desktop/front doc to yanjun/image004.png)
+![image-20210506214315625](./image004.png)
 
 
 
 **IMAGE: Application source files**
 
-![image-20210506214427210](/Users/wayne/Desktop/front doc to yanjun/image005.png)
+![image-20210506214427210](image005.png)
 
 
 
@@ -115,11 +115,11 @@ After all, we wouldn't develop features that the front end can't implement, or t
 
 **prototype full of functions**
 
-![Prototype_wayne](/Users/wayne/Desktop/front doc to yanjun/image006.jpg)
+![Prototype_wayne](image006.jpg)
 
 **lean mature prototype**
 
-![image-20210506225133190](/Users/wayne/Desktop/front doc to yanjun/image007.png)
+![image-20210506225133190](image007.png)
 
 **sperate targets:**
 
@@ -177,11 +177,11 @@ The second area, where the main features and content are displayed, includes vot
 
 **old middle area**
 
-![WechatIMG12857](/Users/wayne/Desktop/front doc to yanjun/image008.png)
+![WechatIMG12857](image008.png)
 
 **new middle area**
 
-![截屏2021-05-07 00.09.26](/Users/wayne/Desktop/front doc to yanjun/image009.png)
+![截屏2021-05-07 00.09.26](image009.png)
 
 The third area, which is a footer area, was originally planned to house disclaimer, GitHub page link, issue report email, and is currently the first to be implemented.
 
@@ -193,7 +193,7 @@ So what method to divide these three areas, from traditional to modern methods h
 
 Bootstrap is a popular front-end framework, based on html css jss. It is simple and flexible relatively fast for web development.
 
-![image-20210507004526019](/Users/wayne/Desktop/front doc to yanjun/image010.png)
+![image-20210507004526019](image010.png)
 
 The advantages are as follows: 
 Mobile device compatibility, all mainstream browsers support bootstrap
@@ -222,6 +222,693 @@ Below, I will cut into the different sections, detailing how to build the curren
 
 **4.1 files**
 
-The following diagram, which is part of the entire project catalog library Chinese and folders, shows two custom components that contain our main features.erdq43                                                                                                                                                                                                                                                                                                                                                                                          w	Q	a
+The following diagram, part of the entire project Chinese and folders, shows two custom components that contain key code to implement our main functionality.
 
-![image-20210507010431994](/Users/wayne/Desktop/front doc to yanjun/image011.png)
+![image-20210507010431994](image011.png)
+
+**4.2 Steps**
+
+this Part is to start describing the process of building the entire project. And take the final code as an example to report.
+
+
+
+We are going to start a new project called dashboard using Angular CLI. Create a new workspace and an initial application.  A workspace contains the files for one or more [projects](https://angular.cn/guide/glossary#project). A project is the set of files that comprise an app, a library, or end-to-end (e2e) tests. Here is to create a new workspace.
+
+```shell
+ng new spa --routing
+
+cd spa
+npm install ng2-charts
+npm install chart.js
+npm install bootstrap
+```
+
+The Angular CLI installs the necessary Angular `npm` packages and other dependencies. This can take a few minutes. It also creates the following workspace and starter project files:
+
+A new workspace, with a root folder named `spa`.
+
+An initial skeleton app project, also called `spa` (in the `src` subfolder).
+
+An end-to-end test project (in the e2e subfolder).
+
+Related configuration files.
+
+
+
+Go to the workspace directory and launch the application. The `ng serve` command builds the app, starts the development server, watches the source files, and rebuilds the app as you make changes to those files. The `--open` flag opens a browser to `http://localhost:4200/`.
+
+```shell
+cd spa
+ng serve --open
+```
+
+
+
+Make changes to the application, Change the application title
+
+Open the project in IDE and navigate to the `src/app` folder to make some changes to the starter app.
+
+Open the component class file (`app.component.ts`) and change the value of the `title` property to 'Make Painful Painful'.
+
+
+
+Add scripts
+
+To make use of the charting framework we need to add the following script to the 'build' in the `angular.json` file. This will ensure scripts are added where required to the HTML body. We are going to add the Chart.js framework globally. so it will be available to every component in your application. We can see in `build: { }` object; you just need to add this script:
+
+```json
+"scripts": ["node_modules/chart.js/dist/Chart.js"]
+```
+
+
+
+Delete the template codes in the `app.component.html`, which means delete all the things in that file.
+
+
+
+Using Chart.js to create a Bar Chart 
+
+Now we have setup the required dependencies we can actually create some charts.
+
+```shell
+ng g c bar-chart
+```
+
+This command calls a utility function which helpfully adds:
+
+1. src/app/bar-chart/bar-chart.component.html
+2. src/app/bar-chart/bar-chart.component.ts
+3. src/app/bar-chart/bar-chart.component.css
+4. src/app/bar-chart/bar-chart.component.spec.ts
+
+Go and open bar-chart.component.html and replace the boilerplate
+
+bar-chart works!
+
+content with something to load our newly created bar chart. 
+
+```html
+<div style="display: inline-block; width: 500px; " >
+  <canvas baseChart width="2" height="3"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="barChartColors">
+  </canvas>
+</div>
+```
+
+This part is only for the chart, we also need button and comments place. So, we amend code like these
+
+followed.
+
+````html
+<div style="display: inline-block;height: 800px; width: 150px; position: absolute;left: 550px">
+  <button *ngFor="let barChartLabel of barChartLabels"
+  style="display: block; width: 120px; margin: 38px 0 37px 0; height: 40px; border-radius: 5px"
+          (click)="clkbtn(barChartLabel)"
+  >
+    {{barChartLabel}}
+  </button>
+</div>
+
+<div style="display: inline-block; height: 700px; width: 300px; margin: 50px;  position: absolute;left: 680px;
+            border-radius: 30px; padding: 20px; background-color: #e9e2e5">
+  <strong>Comments:</strong>
+  
+<!--  <div id="tst" style="border: #46505a solid 1px; width: 100px; height: 100px">-->
+<!--    {{tstString}}-->
+<!--  </div>-->
+  
+</div>
+````
+
+Here we’re using the baseChart directive which is added to a canvas element. Furthermore, the attributes datasets, labels, options, legend and chartType are bound to class members which are added to the implementation of class BarChartComponent in bar-chart-component.ts:
+
+```typescript
+import {Component, OnInit, ViewChild} from '@angular/core';
+import { DataService } from '../data.service';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { Color, BaseChartDirective, Label } from 'ng2-charts';
+// import * as pluginAnnotations from 'chartjs-plugin-annotation';
+
+import { ChangeDetectorRef } from '@angular/core';
+
+@Component({
+  selector: 'app-bar-chart',
+  templateUrl: './bar-chart.component.html',
+  styleUrls: ['./bar-chart.component.css']
+})
+
+export class BarChartComponent implements OnInit {
+
+
+  constructor(private dataService: DataService) { }
+
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    legend: {
+      labels: { fontColor: 'black' }
+    },
+    scales: {
+      xAxes: [{
+        ticks: { fontColor: 'black', beginAtZero: true,
+          backdropColor: { color: 'rgba(255,255,255,0.1)' } },
+        gridLines: { color: 'rgba(255,255,255,0.1)' },
+        color: { color: 'rgba(255,255,255,0.1)' },
+        borderColor: { color: 'rgba(255,255,255,0.1)' },
+        display: true
+      }],
+      yAxes: [{
+        ticks: { fontColor: 'black' },
+        gridLines: { color: 'rgba(255,255,255,0.1)' },
+        display: false
+      }]
+    },
+  };
+  public barChartLabels = ['Head', 'Eyes', 'Neck Pain', 'Shoulder', 'Cervical', 'Lumbar', 'Hand', 'Limb Pain', 'Foot'];
+  public barChartType = 'horizontalBar';
+  public barChartLegend = true;
+  public barChartData = [
+    {data: [3, 2, 1, 4, 8, 6, 7, 5, 8], label: 'Vote if you got same pain by click buttons on the right'},
+    // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+  ];
+  public barChartPlugins = [];
+  public barChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(90,85,85,0.3)',
+    },
+  ];
+
+  stats: any = [];
+  currentdata = null;
+  currentIndex = -1;
+  title = '';
+  indexOfBar = 0;
+  tstString = '';
+
+  ngOnInit() {
+    this.retrieveData();
+    this.retrieveComments();
+  }
+
+  retrieveData() {
+    this.dataService.getAll().subscribe(
+      data => {
+        this.stats = data;
+        this.barChartLabels = this.stats.barChartLabels;
+        this.barChartData = this.stats.barChartData;
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+
+  retrieveComments() {
+    this.dataService.getComments().subscribe(
+      data => {
+        this.stats = data;
+        this.tstString += this.stats[0].content;
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  clkbtn(barChartLabel: string){
+    this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);
+    this.barChartData[0].data[this.indexOfBar]++;
+  }
+}
+
+```
+
+Now we have setup the required dependencies we can actually create some charts.
+
+```shell
+ng g c main-body
+```
+
+This command calls a utility function which helpfully adds:
+
+1. src/app/main-body/main-body.component.html
+2. src/app/main-body/main-body.component.ts
+3. src/app/main-body/main-body.component.css
+4. src/app/main-body/main-body.component.spec.ts
+
+html 
+
+```html
+<img id="img1" src="/assets/body.png" alt="body" useMap="#planetMap">
+<map name="planetMap" id="planetMap">
+  <area class="tmp" shape="circle" coords="270,140,15" alt="Shoulder" id="s1" onMouseOver="show1()">
+  <area class="tmp" shape="circle" coords="100,130,15" alt="Neck" id="s2" onMouseOver="show2()">
+  <area class="tmp" shape="circle" coords="280,300,15" alt="Back" id="s3" onMouseOver="show3()">
+  <area class="tmp" shape="circle" coords="290,360,15" alt="Lumbar" id="s4" onMouseOver="show4()">
+  <area class="tmp" shape="circle" coords="85,425,15" alt="Wrist" id="s5" onMouseOver="show5()">
+  <area class="tmp" shape="circle" coords="305,575,15" alt="Leg" id="s6" onMouseOver="show6()">
+  <area class="tmp" shape="circle" coords="170,65,15" alt="Eyes" id="s7" onMouseOver="show7()">
+  <area class="tmp" shape="circle" coords="120,30,15" alt="Head" id="s8" onMouseOver="show8()">
+  <area class="tmp" shape="circle" coords="320,675,15" alt="Foot" id="s9" onMouseOver="show9()">
+</map>
+
+<div class="circle1" id = "circle1"></div>
+<div class="circle2" id = "circle2"></div>
+<div class="circle3" id = "circle3"></div>
+<div class="circle4" id = "circle4"></div>
+<div class="circle5" id = "circle5"></div>
+<div class="circle6" id = "circle6"></div>
+<div class="circle7" id = "circle7"></div>
+<div class="circle8" id = "circle8"></div>
+<div class="circle9" id = "circle9"></div>
+
+```
+
+css
+
+```css
+#img1{
+  z-index:1;
+  position:absolute;
+  left:0px;
+  top:0px;
+  /*height: 800px;*/
+  /*width: 392px;*/
+}
+
+.circle1{
+  z-index: 100;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 270px;
+  top: 140px;
+}
+
+.circle2{
+  z-index: 101;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 100px;
+  top: 130px;
+}
+
+.circle3{
+  z-index: 102;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 280px;
+  top: 300px;
+}
+
+.circle4{
+  z-index: 103;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 290px;
+  top: 360px;
+}
+
+.circle5{
+  z-index: 104;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 85px;
+  top: 425px;
+}
+
+.circle6{
+  z-index: 105;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 305px;
+  top: 575px;
+}
+
+.circle7{
+  z-index: 106;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 170px;
+  top: 65px;
+}
+
+.circle8{
+  z-index: 106;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 120px;
+  top: 30px;
+}
+
+.circle9{
+  z-index: 106;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 330px;
+  top: 680px;
+}
+
+```
+
+amend script in index.html
+
+```javascript
+<script>
+    window.onload = function(){
+      adjust();
+      // passInfo();
+    }
+
+
+
+    function adjustPosition(position) {
+      var myImage = document.getElementById("img1");
+      if (typeof myImage.naturalWidth == "undefined") {
+        // IE 6/7/8
+        var i = new Image();
+        i.src = myImage.src;
+        var rw = i.width;
+        var rh = i.height;
+      }
+      else {
+        // HTML5 browsers
+        var rw = myImage.naturalWidth;
+        var rh = myImage.naturalHeight;
+      }
+      // 获取宽高
+      let pageWidth = rw;
+      let pageHeight = rh;
+      // 图片原始尺寸
+      let imageWidth = 392;
+      let imageHeight = 800;
+
+      let each = position.split(",");
+
+      for (let i = 0; i < 2; i++) {
+        if(i%2==0){
+          // 新的x轴坐标
+          each[i] = Math.round(parseInt(each[i]) * pageWidth / imageWidth).toString();
+        }else{
+          // 新的y轴坐标
+          each[i] = Math.round(parseInt(each[i]) * pageHeight / imageHeight).toString();
+        }
+      }
+      let newPosition = "";
+      for (let j = 0; j < each.length; j++) {
+        newPosition += each[j];
+        if (j < each.length - 1) {
+          newPosition += ",";
+        }
+      }
+      return newPosition;
+    }
+
+    function adjust() {
+      let map = document.getElementById("planetMap");
+      let area = map.getElementsByTagName('area');
+
+      for (let i = 0; i < area.length; i++) {
+        let oldCoords = area[i].getAttribute("coords");
+        let newCoords = adjustPosition(oldCoords);
+        area[i].setAttribute("coords", newCoords);
+      }
+    }
+
+    function show1(){
+      alert("Class: Shoulder"+"\n\n"
+        +"Common symptoms: Shoulder pain occurs when the arm moves up and back, or even does not move"+"\n\n"
+        +"Cause: There is overuse and chronic inflammation, over-movement of the arm can cause the top of the upper limb bone to squeeze the shoulder sleeve muscles toward the upper end of the shoulder blade, which can cause muscle inflammation and swelling. If you continue to exercise despite inflammation, the tendon weakens and tears."+"\n\n"
+        +"Treatment: Many shoulder injuries can be recovered after rest. Nonsteroidal anti-inflammatory drugs (NSAIDs, such as ibuprofen) can also be used for short-term pain relief (up to 72 hours). Exercise helps."
+      );
+    }
+
+    function show2(){
+      alert("Class: Neck pain"+"\n\n"
+        +"Common symptoms: Cervical cervical vertebral disease"+"\n\n"
+        +"
+            
+            ...
+            ...
+            
+    function show9()
+      			...
+            hand in the direction of your back. Or choose a grip, handball, etc. At the same time, also avoid cold hands."
+      );
+    }
+  </script>
+```
+
+
+
+
+
+Now we go back to the `app.component.html` file where we can just implement the separating the page.
+
+for header, top bar
+
+```html
+<!--This area is made for the header-->
+<div class="areas" id="header">
+  {{title}}
+</div>
+```
+
+![image-20210507062138653](image012.png)
+
+for main content area
+
+```html
+<!--This area is made for the main content, including 3 parts-->
+<div style="min-width: 2000px">
+  <div id="body_left" >
+    <div id="votesBarBox" >
+      <app-bar-chart  id="votesBar"></app-bar-chart>
+    </div>
+  </div>
+
+  <div id="body_right">
+<!--      <img src="../assets/body.png" alt="123" height="800px" width="620px">-->
+<!--    <div style="height: 800px; width: 200px; display: inline-block">-->
+
+<!--    </div>-->
+    <app-main-body> </app-main-body>
+  </div>
+</div>
+```
+
+![image-20210507062218837](image013.png)
+
+for footer
+
+```html
+<div class="areas" id="footer">
+  <strong>
+    Disclaimer:
+  </strong>
+  <hr/>
+  These Th... ligence.
+</div>
+```
+
+![image-20210507062324016](image014.png)
+
+In addition to the changes to the above two files that are similar to those in the teacher's tutorial, we have also changed the style to make the page similar to the layout we expected.
+
+So we modify the content of the file `bar-chart.component.css` like this:
+
+```CSS
+#votesBar{
+  background-color: #80808030;
+  height: auto;
+  width: auto;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  height:auto !important;
+
+  min-height:344px;
+}
+.areas{
+  text-align: center;
+}
+
+#header{
+  height: 60px ;
+  margin: 30px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: rgb(162,181,205);
+  position: sticky;
+  top : 30px;
+  z-index: 999;
+  text-align: center;
+  font-family: Silom;
+  font-size: 45px;
+  line-height: 60px;
+  color: #46505a;
+}
+
+
+#footer{
+  margin: 10px 200px 0 200px;
+  height: 60px;
+
+  clear: right;
+  font-size: 14px;
+  font-family: Arial;
+
+  position: relative;
+  top: 10px;
+}
+
+#votesBarBox{
+  min-width: 1620px;
+
+}
+
+#body_left{
+  display: inline-block;
+  /*position: relative;*/
+  border-radius: 0 45px 45px 0;
+  height: 800px;
+  width: 1100px;
+  min-width: 500px;
+  background-color: rgb(238,233,233);
+}
+
+#body_right{
+  display: inline-block;
+  position: relative;
+  border-radius: 45px;
+  height: 800px;
+  width: 30%;
+  min-width: 400px;
+  vertical-align: top;
+  /*background-color: rgb(245,245,245);*/
+  /*background-color: #FFFFFF;*/
+  float: right ;
+  right: 0;
+  z-index: 500;
+  position: fixed;
+
+}
+
+#card-right{
+  height: 800px;
+  width: 300px;
+  min-width: 300px;
+  display: inline-block;
+  border: red solid 1px;
+  vertical-align: top;
+}
+
+```
+
+Update app.module
+
+First we need to make sure the main imports are present to reflect our additions:
+
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+
+import {ChartsModule} from 'ng2-charts';
+
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BarChartComponent} from './bar-chart/bar-chart.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    BarChartComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ChartsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
+
+Before running you need to make sure `angularCompilerOptions` are removed from your `tsconfig.json`. In various recent versions of Angular CLI strict injection checking sometimes gets enabled in the boilerplate code which would prevent the Chart.js canvas render from working. Edit this file and make sure your `tsconfig.json` looks like the below:
+
+```json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
+}
+```
+
