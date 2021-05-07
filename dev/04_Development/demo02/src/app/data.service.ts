@@ -16,4 +16,8 @@ export class DataService {
   public getAll(){
     return this.httpClient.get(this.REST_API_SERVER);
   }
+
+  public getComments(){
+    return this.httpClient.get('http://localhost:3000/Comments');
+  }
 }

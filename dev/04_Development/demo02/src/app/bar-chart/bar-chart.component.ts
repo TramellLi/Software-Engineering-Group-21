@@ -25,9 +25,12 @@ export class BarChartComponent implements OnInit {
     },
     scales: {
       xAxes: [{
-        ticks: { fontColor: 'black' },
+        ticks: { fontColor: 'black', beginAtZero: true,
+          backdropColor: { color: 'rgba(255,255,255,0.1)' } },
         gridLines: { color: 'rgba(255,255,255,0.1)' },
-        display: false
+        color: { color: 'rgba(255,255,255,0.1)' },
+        borderColor: { color: 'rgba(255,255,255,0.1)' },
+        display: true
       }],
       yAxes: [{
         ticks: { fontColor: 'black' },
@@ -58,10 +61,12 @@ export class BarChartComponent implements OnInit {
   currentIndex = -1;
   title = '';
   indexOfBar = 0;
+  tstString = '';
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.retrieveData();
+    this.retrieveComments();
   }
 
   // tslint:disable-next-line:typedef
@@ -79,9 +84,23 @@ export class BarChartComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
+  retrieveComments() {
+    this.dataService.getComments().subscribe(
+      data => {
+        this.stats = data;
+        // now let's update the fields
+        this.tstString += this.stats[0].content;
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  // tslint:disable-next-line:typedef
   clkbtn(barChartLabel: string){
     this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);
     this.barChartData[0].data[this.indexOfBar]++;
     this.changeDetectorRef.reattach();
+    this.retrieveComments();
   }
 }

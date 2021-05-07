@@ -9,6 +9,7 @@ const db =  require('./model/db')
 
 // Get our API routes
 const api = require('./server/routes/api');
+const comments = require('./server/routes/comments');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(timeout('15s'));
 
 // Set our api routes
 app.use('/api', api);
+app.use('/Comments', comments);
 
 //Set 404
 // app.use(function(req, res, next){
