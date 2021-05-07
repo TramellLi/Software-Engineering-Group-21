@@ -25,25 +25,26 @@
  	  	2. components
  	  	3. codes
 
-![SPA info net](./image000.png)
+![SPA info net](https://i.imgur.com/zKdYv5o.png=centerme)
 
 
 
-# Content:
+
+# Front_end:
 
 ​	In this project, we will learn and use MEAN stack which is a development toolkit for creating single page applications. The whole project is aiming at practice of full stack development and MEAN is the abbrevation of four development tools, Mongo Database for data storage, Express web application framework, Angular  Javascript web frontend, Node.js application server. The third part of that, 'A', Angular is going to be used as the framework of the frontend for the project. There's going to be a model from front to back, where frontend is in charge of display all the content we want to show to the users, not only the pure data and characters, but also the decoration and style pattern, apart from this, it also provides the features of interactions between users and the web page, as well as data transport from database behind backend to the components on the top of the frontend. In this part of documentation, we will be focusing on the frontend disign and implementation, including appearence and data, and some of the connection to the back end.
 
-![image-20210506182709078](/Users/wayne/Desktop/front doc to yanjun/image001.png)
+![image-20210506182709078](https://i.imgur.com/iNVmV0p.png=centerme)
 
 **1 .   Main framework: Angular.**
 
 Angular is an application design framework and development platform for creating efficient and sophisticated sigle-page apps.
 
-![image002](./image002.png)
+![image002](https://i.imgur.com/9ffkwyu.png=centerme)
 
 There are some frameworks at the same level as Angular, like React, Angular uses the browser's DOM, while React uses the virtual DOM. Virtual DOM is a simplified version of DOM. By using the virtual DOM, you can change any element very quickly without having to render the entire DOM. It changes performance from excellent to excellent.
 
-![image-20210506180343126](./image003.png)
+![image-20210506180343126](https://i.imgur.com/A7n3slX.png=centerme)
 
 Angular the a pretty integrated and mature framework, wihch means it is more powerful but tough to get started for freshmen. We are going to use some basic features from Angurlar 11, which is stable and useful, supported and developed by Google. With the help of that, many processes could be simplified a lot no matter which stage we are. We make using angular easier by making use of Angular CLI tool, representing Command Line Interfaces, in some basic example we know that it could help create folders and files, put the template content into them and setup the configuration file and environment well automatically, which is helpful and friendly to new users but not good for new developers. 
 
@@ -74,13 +75,13 @@ Such as angular.json package.json src node_modules tsconfig.json and so on.
 
 **IMAGE: workspace configuration files**
 
-![image-20210506214315625](./image004.png)
+![image-20210506214315625](https://i.imgur.com/6f50CSd.png=centerme)
 
 
 
 **IMAGE: Application source files**
 
-![image-20210506214427210](image005.png)
+![image-20210506214427210](https://i.imgur.com/8CrSyFV.png=centerme)
 
 
 
@@ -115,11 +116,11 @@ After all, we wouldn't develop features that the front end can't implement, or t
 
 **prototype full of functions**
 
-![Prototype_wayne](image006.jpg)
+![Prototype_wayne](https://i.imgur.com/Dl3JV9d.jpg=centerme)
 
 **lean mature prototype**
 
-![image-20210506225133190](image007.png)
+![image-20210506225133190](https://i.imgur.com/e7lwiDf.png=centerme)
 
 **sperate targets:**
 
@@ -177,11 +178,11 @@ The second area, where the main features and content are displayed, includes vot
 
 **old middle area**
 
-![WechatIMG12857](image008.png)
+![WechatIMG12857](https://i.imgur.com/GqDxK3O.png=centerme)
 
 **new middle area**
 
-![截屏2021-05-07 00.09.26](image009.png)
+![截屏2021-05-07 00.09.26](https://i.imgur.com/qKlRgh2.png=centerme)
 
 The third area, which is a footer area, was originally planned to house disclaimer, GitHub page link, issue report email, and is currently the first to be implemented.
 
@@ -193,7 +194,7 @@ So what method to divide these three areas, from traditional to modern methods h
 
 Bootstrap is a popular front-end framework, based on html css jss. It is simple and flexible relatively fast for web development.
 
-![image-20210507004526019](image010.png)
+![image-20210507004526019](https://i.imgur.com/HFJjBIR.png=centerme)
 
 The advantages are as follows: 
 Mobile device compatibility, all mainstream browsers support bootstrap
@@ -224,7 +225,7 @@ Below, I will cut into the different sections, detailing how to build the curren
 
 The following diagram, part of the entire project Chinese and folders, shows two custom components that contain key code to implement our main functionality.
 
-![image-20210507010431994](image011.png)
+![image-20210507010431994](https://i.imgur.com/COSuqTR.png=centerme)
 
 **4.2 Steps**
 
@@ -715,7 +716,7 @@ for header, top bar
 </div>
 ```
 
-![image-20210507062138653](image012.png)
+![image-20210507062138653](https://i.imgur.com/bhq5U2I.png=centerme)
 
 for main content area
 
@@ -738,7 +739,7 @@ for main content area
 </div>
 ```
 
-![image-20210507062218837](image013.png)
+![image-20210507062218837](https://i.imgur.com/a11JYFV.png=centerme)
 
 for footer
 
@@ -752,7 +753,7 @@ for footer
 </div>
 ```
 
-![image-20210507062324016](image014.png)
+![image-20210507062324016](https://i.imgur.com/KvB9mz3.png=centerme)
 
 In addition to the changes to the above two files that are similar to those in the teacher's tutorial, we have also changed the style to make the page similar to the layout we expected.
 
