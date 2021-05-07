@@ -5,10 +5,10 @@ const CommentModel  = require('../../model/Comments.js');
 /* GET Comments. */
 router.get('/', function (req, res) {
   res.header("Content-Type",'application/json');
-  var result = CommentModel.findOne({_id: 1},function(err,docs){
+  var document = CommentModel.findOne({_id: 1},function(err,docs){
    if(!err){
-      res.send(result);
-      console.log('Find one Body part: '+docs)
+      res.send(JSON.stringify(docs));
+      console.log('Find one Body part: '+docs);
    }
   });
 })
