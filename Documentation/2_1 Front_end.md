@@ -1,5 +1,3 @@
-# Title: 
-
 ​	**Front end Part of the whole porject.**
 
 
@@ -216,7 +214,7 @@ Similarly, in the next section, I'll use our actual code and some appropriate an
 
 This is a traditional and outdated approach, and functional limitations exist, so this approach is not chosen to implement it.
 
-**4 . Fitures implementation**
+**4 . Features implementation**
 
 This chapter, is the last section of front-end development, the previous sections describe the comparative theory, stay in the design ideas and implementation ideas. In this section we'll actually paste some code in, do some explanations, and the entire development process. There may be fewer detours to show the latest code directly, but words will still be used to describe some of the key turning points and the different scenarios explored.
 Below, I will cut into the different sections, detailing how to build the current page, but also mention that there are better implementation methods, room for improvement, problems that have been solved and unresolved difficulties.
@@ -464,6 +462,13 @@ This command calls a utility function which helpfully adds:
 4. src/app/main-body/main-body.component.spec.ts
 
 html 
+
+Location
+  Call the "usemap" function to create a map on the body image. Based on the created map, find out the coordinates of the body parts to be identified on the map, and set up the relevant area. However, the scale of the image will change with the change of different browser interfaces, which will cause the previously marked coordinates are no longer accurate, so it is impossible to accurately locate. Therefore, I created new functions "adjust" and "adjust position" to adjust the area hot area coordinates of map elements to adapt the window size. First, the ratio of the original width and height of the image and the initial coordinate point are obtained. Then, use the function "adjust position" to get the actual width and height of the image in the browser. Finally, the ratio of the original height and width of the image to the actual height and width is calculated, and the new coordinate points are obtained with this ratio. In this way, accurate positioning can be achieved.
+
+Trigger the pop-up window
+ In order to show the symptoms and suggestions related to different parts of the body, I intended to use the pictures to show the symptoms when I moved the mouse over the picture to the set area. However, the frequent appearance of images will make the browser interface look very messy. Therefore, I decided to use the alert function to display the relevant text in a pop-up window on the web page, so that I can explain it in more detail. Therefore, I defined their IDs for the area areas of different maps, and used the "OnMouseOver" function in them. When the mouse moves to the relevant area, call the "show" function to display all the information of this area. The ID associated with this area can be identified and used when contacting the back-end database.
+
 
 ```html
 <img id="img1" src="/assets/body.png" alt="body" useMap="#planetMap">
