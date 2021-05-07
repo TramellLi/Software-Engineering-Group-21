@@ -61,17 +61,143 @@ A few implementations have deviated from the original design of our project and 
 Waterfall model insists that teams wait until implementation finishes before starting the UAT-testing, which would lead to have a small window of time left to do a large revision of our product.
 
 
-**4. System Verification(30/04-07/04):**
+**4. System Verification(30/04-07/05):**
 
-UT-testing
-UAT -testing
+UAT - testing: We have interviewed two users furing the Design phase, and for the UAT, we have went back to the same people and asked them to fill up our questionnaire and a short interview.  For details of their response please goto our [ [evaluation]] section
 
-To be continued... 
-
+We have been experiencing ceratin difficulties with testing sending data from backend to front-end, and team members have been meeting up frequently for a sprint starting from 29th April.
 
 
+
+### MeetingLogs
+
+                       Meeting 1                    Feb 09 
+- Group members self introduction and team building 
+- Everyone talks about their background and related experience. 
+- Clarify the requirement of the group project together
+- Brainstorm the project idea together:
+- Idea 1: occupational diseases of engineers   bad habits pains
+Related monitoring and correcting webs and apps
+mouse hand, tech neck, death from stress……
+- Idea 2: COVID-19 related good habits and bad habits
+Finally decide on taking on idea 1.
+
+
+                        Meeting 2                   Feb 16th 
+- Version control & Git
+- Create a public repository and assign one person to be in charge of the git version control work. 
+- Everyone tried Git together.
+- Docker - Go through docker commands and get familiar with docker. 
+- Task for following week:
+- Clarify further research areas.
+- Read up related research and come up with motivation
+
+
+
+                 Meeting 3                      Feb 18th 
+- Settle down the final idea and talk that in detail.
+- Agree on motivation, objectives and problems to solve -> collectively work on Proposal
+- Discuss this week’s learning content and what the teachers said in live classes. 
+- Talk about docker and mirror.
+Task for next week : 
+- Web scraping
+- look for inspiration and readily made code for front-end
+- Roles:
+Yan jun Liu - Report writing documentation   front-end
+Qi Chongyan - front end & back end coding
+Wen Guangzhe – front end & back end coding 
+Chen jian - back end 
+Li Rang – back end & test 
+Ask teacher about the advice we give to people 
+- Task for following week:
+- Content research
+- Background research
+
+
+              Meeting 4                         Feb 23th
+
+- Decision on sections/ information to display on the front-end
+- Figure out MongoDB
+- Collect content research after finalizing website visual design
+- Discussion on backend data
+- Paper prototype for next meeting
+- Content research for next meeting
+- Make it into wireframe
+
+
+             Meeting 5                           9th March
+- Follow tutorials discuss docker image usage in our team
+-	Try to pull docker image from docker desktop
+- finish background research
+
+
+             Meeting 6                          March 18th
+-	Discuss what are we going to present to teachers and what we are going to ask teachers during the feedback discussion session. 
+-	Discuss about this week’s contents
+-	Clarify everyone’s tasks during Easter holiday and ddl for each task
+
+
+            Meeting 7                            March 25th
+
+- Front-end first version(barchart part)
+- Change of product name
+- Starting tutorials for backend
+
+
+            Meeting 8                           April 1st
+- Front-end second version(body parts)
+-	Discuss about current issues in front end: the webpage positioning issue. Try to solve that together by going through different methods together like using Canvas or doing positioning directly. 
+- 	Discuss about the structure of data in database. 
+
+
+           Meeting 9                          April 6th
+
+-	Solve bar chart area interaction issue together 
+-	Write the RESTful API codes and test data transfer from database to front end together 
+-	Solve issues in the testing process: database authentication issue
+
+
+          Meeting 10                        April 22th
+- Test data transfer from front end to back end together and solve issues during the testing process
+- Discuss about unit testing and test plan together. Pick up certain functions to test. 
+
+
+            Meeting 11                     April 27th
+- Discuss about user acceptance testing feedback together and discuss how to improve users’ feelings. 
+- Plan for next user acceptance testing.
+- Discuss data storage and seeding issue.
+
+---
+Spring for data transfer
+
+---
+
+         Meeting 12                       April 29th
+-	Try data seeding from data.json to database
+-	Try the whole data transfer process and API together
+
+
+        Meeting 13                         May 4th
+- Testing transfering data from backend to frontend
+- finding out where to set the commands get post restful API 
+ Sovled by: editing parts of:  api.js   service.ts   component.ts
+- Mongodb authenticate : “Cannot find user” 
+
+
+        Meeting 14                        May 6th
+- Solving MongoDB authenticate: 
+we tried to insert data manually into a new database.  
+In admin, the docker-compose.yml file helps us create a new user. 
+And we create new database under admin-new user.  
+
+
+        Meeting 15                         May 7th
+- test data.json seeding to mongodb  
+-There are many options to   seed data into database 
+Through docker image;  through CLI tools; through describing import data in JavaScript or TypeScript files 
 
 [System Implementation]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/2_systemImplementation.md
 [dev branch]: https://github.com/TramellLi/Software-Engineering-Group-21/tree/dev 
 [UX Design]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/3_uxDesign.md
 [ here ]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/proposal.md
+[evaluation]: https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/5_Evaluation.md
