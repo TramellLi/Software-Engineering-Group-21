@@ -17,11 +17,12 @@ RUN npm install
 
 COPY --chown=node:node . .
 
+# Make wait-for executable
+RUN chmod +x wait-for.sh
+
 # Building the website
 RUN ./node_modules/.bin/ng build
 
 # Add metadata to the image to describe which port the container is listening on at runtime.
 EXPOSE 3000
 
-# Run the specified command within the container.
-CMD [ "node", "server.js" ]

@@ -1,0 +1,4 @@
+*.json  eol=lf
+*.js    eol=lf
+*.jsx   eol=lf
+*.sh   eol=lf
