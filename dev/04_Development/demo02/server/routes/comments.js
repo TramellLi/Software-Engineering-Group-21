@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const CommentModel  = require('../../model/Comments.js');
+const CommentModel  = require('../model/Comments.js');
 
 /* GET Comments. */
 router.get('/', function (req, res) {
