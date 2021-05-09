@@ -100,6 +100,9 @@ export class BarChartComponent implements OnInit {
 
 
         // now let's update the fields
+
+        console.log(data);
+
         this.tstString += this.stats[0].content;
       },
       error => {

@@ -4,7 +4,7 @@ services:
   nodejs:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: node-Dockerfile
     image: nodejs
     container_name: nodejs
     restart: unless-stopped
@@ -17,13 +17,19 @@ services:
       - MONGO_DB=$MONGO_DB
     ports:
       - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
     networks:
       - app-network
     command: ./wait-for.sh db:27017 -- /home/node/app/node_modules/.bin/nodemon server.js
 
   db:
-    image: mongo:4.1.8-xenial
-    container_name: db
+    build:
+      context: .
+      dockerfile: mongo-Dockerfile
+    image: mongodb
+    container_name: meandb
     restart: unless-stopped
     env_file: .env
     environment:
@@ -32,13 +38,13 @@ services:
     ports:
       - "27018:27017"
     volumes:
-      - ./dbdata:/data/db
+      - dbdata:/data/db
     networks:
       - app-network
-
 networks:
   app-network:
     driver: bridge
 
 volumes:
   dbdata:
+  node_modules:

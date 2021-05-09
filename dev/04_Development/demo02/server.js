@@ -4,7 +4,7 @@ var timeout = require('connect-timeout');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-const db =  require('./model/db')
+const db =  require('./server/model/db')
 // const {mongoose, User} = require("./model/db")
 
 // Get our API routes
