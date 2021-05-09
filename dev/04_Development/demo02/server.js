@@ -14,7 +14,7 @@ const comments = require('./server/routes/comments');
 const app = express();
 
 //testing
-var assert = require('assert');
+// var assert = require('assert');
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'dist/demo02')));
 
 // Set time out period
-app.use(timeout('15s'));
+// app.use(timeout('15s'));
 
 // Set our api routes
 app.use('/api', api);

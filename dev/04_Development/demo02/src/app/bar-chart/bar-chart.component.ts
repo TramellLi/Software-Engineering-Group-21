@@ -1,10 +1,13 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { DataService } from '../data.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 // import * as pluginAnnotations from 'chartjs-plugin-annotation';
-
+import { ElementRef } from '@angular/core';
+// import { Service } from '../service';
+// import { NzMessageService } from 'ng-zorro-antd';
 import { ChangeDetectorRef } from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-bar-chart',
@@ -13,7 +16,8 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 
 export class BarChartComponent implements OnInit {
-
+  // @ViewChild('regionCharts', {static: false}) regionCharts: any;
+  // @Input() addItemStream: Observable<any> | undefined;
 
   constructor(private dataService: DataService, public changeDetectorRef: ChangeDetectorRef ) { }
 
@@ -67,6 +71,9 @@ export class BarChartComponent implements OnInit {
   ngOnInit() {
     this.retrieveData();
     this.retrieveComments();
+    // this.clkbtn()
+    // @ts-ignore
+    // document.getElementById('myChart').ontimeupdate(this.clkbtn());
   }
 
   // tslint:disable-next-line:typedef
@@ -88,6 +95,10 @@ export class BarChartComponent implements OnInit {
     this.dataService.getComments().subscribe(
       data => {
         this.stats = data;
+
+        console.log(data);
+
+
         // now let's update the fields
         this.tstString += this.stats[0].content;
       },
@@ -100,7 +111,13 @@ export class BarChartComponent implements OnInit {
   clkbtn(barChartLabel: string){
     this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);
     this.barChartData[0].data[this.indexOfBar]++;
+    this.barChartLegend = false;
     this.changeDetectorRef.reattach();
     this.retrieveComments();
+    this.barChartLegend = true;
+    // this.update();
+    // this.regionCharts.chartInstance.setOption(this.barChartData);
+    // @ts-ignore
+    // document.getElementById('myChart').ontimeupdate(this.clkbtn());
   }
 }

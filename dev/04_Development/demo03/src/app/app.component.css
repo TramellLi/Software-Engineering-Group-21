@@ -1,0 +1,52 @@
+.toolbar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: black;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+.chart {
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  display: inline-block;
+  border: black dashed 2px;
+  width: 900px;
+  height: 800px;
+  float: left;
+  font-size: 30px;
+}
+.mod{
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  display: inline-block;
+  border: black dashed 2px;
+  width: 900px;
+  height: 800px;
+  float: right;
+}
+
+.content{
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: black dashed 2px;
+  width: 1900px;
+
+  height: 1000px;
+  float: right;
+  position: fixed;
+  top: 80px;
+}

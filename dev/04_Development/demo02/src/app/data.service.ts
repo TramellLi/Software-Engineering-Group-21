@@ -10,6 +10,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 export class DataService {
 
   private REST_API_SERVER = 'http://localhost:3000/api';
+  private REST_API_SERVER_C = 'http://localhost:3000/Comments';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,6 +19,6 @@ export class DataService {
   }
 
   public getComments(){
-    return this.httpClient.get('http://localhost:3000/Comments');
+    return this.httpClient.get(this.REST_API_SERVER_C);
   }
 }
