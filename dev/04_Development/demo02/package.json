@@ -51,14 +51,11 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-<<<<<<< HEAD
-    "typescript": "~4.1.5"
-=======
+
     "typescript": "~4.1.5",
     "connect-timeout": "^1.9.0"
   },
   "mdSeed": {
     "seedersFolder": "./seeders"
->>>>>>> 378d54e1ad13f3a83b77b8d2cca1eabca047d5e5
   }
 }

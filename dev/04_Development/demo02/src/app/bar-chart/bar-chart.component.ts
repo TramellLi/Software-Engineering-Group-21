@@ -19,7 +19,9 @@ export class BarChartComponent implements OnInit {
   // @ViewChild('regionCharts', {static: false}) regionCharts: any;
   // @Input() addItemStream: Observable<any> | undefined;
 
-  constructor(private dataService: DataService, public changeDetectorRef: ChangeDetectorRef ) { }
+  constructor(private dataService: DataService, public changeDetectorRef: ChangeDetectorRef ) {
+    this.retrieveData();
+  }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -43,6 +45,7 @@ export class BarChartComponent implements OnInit {
       }]
     },
   };
+  public comments = ['Test comment 1', 'Test comment 2', 'Test comment 3'];
   public barChartLabels = ['Head', 'Eyes', 'Neck Pain', 'Shoulder', 'Cervical', 'Lumbar', 'Hand', 'Limb Pain', 'Foot'];
   public barChartType = 'horizontalBar';
   public barChartLegend = true;
@@ -77,6 +80,10 @@ export class BarChartComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
+  ngOnChange(){
+    this.retrieveComments();
+  }
+  // tslint:disable-next-line:typedef
   retrieveData() {
     this.dataService.getAll().subscribe(
       data => {
@@ -95,14 +102,8 @@ export class BarChartComponent implements OnInit {
     this.dataService.getComments().subscribe(
       data => {
         this.stats = data;
-
-        console.log(data);
-
-
         // now let's update the fields
-
         console.log(data);
-
         this.tstString += this.stats[0].content;
       },
       error => {
@@ -122,5 +123,6 @@ export class BarChartComponent implements OnInit {
     // this.regionCharts.chartInstance.setOption(this.barChartData);
     // @ts-ignore
     // document.getElementById('myChart').ontimeupdate(this.clkbtn());
+    this.ngOnChange();
   }
 }
