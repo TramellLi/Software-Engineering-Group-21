@@ -18,6 +18,6 @@ export class DataService {
   }
 
   public getComments(){
-    return this.httpClient.get('http://localhost:3000/Comments');
+    return this.httpClient.get('http://localhost:3000/comments');
   }
 }
