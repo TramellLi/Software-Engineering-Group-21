@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'dist/demo02')));
 
 // Set our api routes
 app.use('/api', api);
-app.use('/Comments', comments);
+app.use('/comments', comments);
 
 //Set 404
 // app.use(function(req, res, next){

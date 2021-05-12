@@ -16,7 +16,7 @@ var CommentSchema = new Schema({
 })
 
 // Create a CommentModel using CommentSchema
-var CommentModel = mongoose.model('Comment',CommentSchema);
+var CommentModel = mongoose.model('Comment',CommentSchema,'Comments');
 
 // Exports BodyPartModel
 module.exports = CommentModel;

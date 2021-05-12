@@ -22,5 +22,6 @@ export class DataService {
 
   public getComments(): Observable<any>{
     return this.httpClient.get(this.REST_API_SERVER_C);
+
   }
 }

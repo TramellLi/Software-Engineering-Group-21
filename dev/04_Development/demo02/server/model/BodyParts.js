@@ -15,7 +15,7 @@ var BodySchema = new Schema({
 })
 
 // Create a BodyPartModel using BodySchema
-var BodyPartModel = mongoose.model('BodyPart',BodySchema);
+var BodyPartModel = mongoose.model('BodyPart',BodySchema,'BodyParts');
 
 // Exports BodyPartModel
 module.exports = BodyPartModel;
