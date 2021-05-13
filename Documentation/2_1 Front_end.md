@@ -34,7 +34,7 @@
 
 ![image-20210506182709078](https://i.imgur.com/iNVmV0p.png=centerme)
 
-**1 .   Main framework: Angular.**
+### 1 .   Main framework: Angular.
 
 Angular is an application design framework and development platform for creating efficient and sophisticated sigle-page apps.
 
