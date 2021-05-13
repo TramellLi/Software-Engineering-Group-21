@@ -136,6 +136,47 @@ Our app has three functions, one is to be able to click on the human body, gener
 
 This feature is arguably one of the most important features we want to do, and we want users to be attracted to the images of human body on the page when they open the page and eager to interact. We specifically mark the vulnerability of the characters, and the cues of these places make it feel like they can move their mouse and interact with them. 
 
+```html
+<img id="img1" src="/assets/body.png" alt="body" useMap="#planetMap">
+<map name="planetMap" id="planetMap">
+  <area class="tmp" shape="circle" coords="270,140,15" alt="Shoulder" id="s1" onMouseOver="show1()">
+  <area class="tmp" shape="circle" coords="100,130,15" alt="Neck" id="s2" onMouseOver="show2()">
+  <area class="tmp" shape="circle" coords="280,300,15" alt="Back" id="s3" onMouseOver="show3()">
+  <area class="tmp" shape="circle" coords="290,360,15" alt="Lumbar" id="s4" onMouseOver="show4()">
+  <area class="tmp" shape="circle" coords="85,425,15" alt="Wrist" id="s5" onMouseOver="show5()">
+  <area class="tmp" shape="circle" coords="305,575,15" alt="Leg" id="s6" onMouseOver="show6()">
+  <area class="tmp" shape="circle" coords="170,65,15" alt="Eyes" id="s7" onMouseOver="show7()">
+  <area class="tmp" shape="circle" coords="120,30,15" alt="Head" id="s8" onMouseOver="show8()">
+  <area class="tmp" shape="circle" coords="320,675,15" alt="Foot" id="s9" onMouseOver="show9()">
+</map>
+
+
+```
+
+css
+
+```css
+#img1{
+  z-index:1;
+  position:absolute;
+  left:0px;
+  top:0px;
+  /*height: 800px;*/
+  /*width: 392px;*/
+}
+
+.circle1{
+  z-index: 100;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  position: absolute;
+  left: 270px;
+  top: 140px;
+}
+```
 
 ***Implementation:***
 The two major activities in body parts implementation are positioning and mouse move over event. We don't need to capture the position of the mouse, we just need to set the events that can be triggered in the specified locale. It's hard to know how this triggerable area can be relatively fixed when the page size or scroll changes, and the positioning doesn't shift when inserted into the overall page as a component, but according to what we expect, we do encounter this problem, and finally switch between several positioning attempts and get the right solution for relative coordinates.
@@ -380,89 +421,6 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./bar-chart.component.css']
 })
 
-export class BarChartComponent implements OnInit {
-
-
-  constructor(private dataService: DataService) { }
-
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-    legend: {
-      labels: { fontColor: 'black' }
-    },
-    scales: {
-      xAxes: [{
-        ticks: { fontColor: 'black', beginAtZero: true,
-          backdropColor: { color: 'rgba(255,255,255,0.1)' } },
-        gridLines: { color: 'rgba(255,255,255,0.1)' },
-        color: { color: 'rgba(255,255,255,0.1)' },
-        borderColor: { color: 'rgba(255,255,255,0.1)' },
-        display: true
-      }],
-      yAxes: [{
-        ticks: { fontColor: 'black' },
-        gridLines: { color: 'rgba(255,255,255,0.1)' },
-        display: false
-      }]
-    },
-  };
-  public barChartLabels = ['Head', 'Eyes', 'Neck Pain', 'Shoulder', 'Cervical', 'Lumbar', 'Hand', 'Limb Pain', 'Foot'];
-  public barChartType = 'horizontalBar';
-  public barChartLegend = true;
-  public barChartData = [
-    {data: [3, 2, 1, 4, 8, 6, 7, 5, 8], label: 'Vote if you got same pain by click buttons on the right'},
-    // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-  ];
-  public barChartPlugins = [];
-  public barChartColors: Color[] = [
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(90,85,85,0.3)',
-    },
-  ];
-
-  stats: any = [];
-  currentdata = null;
-  currentIndex = -1;
-  title = '';
-  indexOfBar = 0;
-  tstString = '';
-
-  ngOnInit() {
-    this.retrieveData();
-    this.retrieveComments();
-  }
-
-  retrieveData() {
-    this.dataService.getAll().subscribe(
-      data => {
-        this.stats = data;
-        this.barChartLabels = this.stats.barChartLabels;
-        this.barChartData = this.stats.barChartData;
-      },
-      error => {
-        console.log(error);
-      });
-  }
-
-
-  retrieveComments() {
-    this.dataService.getComments().subscribe(
-      data => {
-        this.stats = data;
-        this.tstString += this.stats[0].content;
-      },
-      error => {
-        console.log(error);
-      });
-  }
-
-  clkbtn(barChartLabel: string){
-    this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);
-    this.barChartData[0].data[this.indexOfBar]++;
-  }
-}
 
 ```
 
@@ -480,153 +438,6 @@ This command calls a utility function which helpfully adds:
 4. src/app/main-body/main-body.component.spec.ts
 
 
-```html
-<img id="img1" src="/assets/body.png" alt="body" useMap="#planetMap">
-<map name="planetMap" id="planetMap">
-  <area class="tmp" shape="circle" coords="270,140,15" alt="Shoulder" id="s1" onMouseOver="show1()">
-  <area class="tmp" shape="circle" coords="100,130,15" alt="Neck" id="s2" onMouseOver="show2()">
-  <area class="tmp" shape="circle" coords="280,300,15" alt="Back" id="s3" onMouseOver="show3()">
-  <area class="tmp" shape="circle" coords="290,360,15" alt="Lumbar" id="s4" onMouseOver="show4()">
-  <area class="tmp" shape="circle" coords="85,425,15" alt="Wrist" id="s5" onMouseOver="show5()">
-  <area class="tmp" shape="circle" coords="305,575,15" alt="Leg" id="s6" onMouseOver="show6()">
-  <area class="tmp" shape="circle" coords="170,65,15" alt="Eyes" id="s7" onMouseOver="show7()">
-  <area class="tmp" shape="circle" coords="120,30,15" alt="Head" id="s8" onMouseOver="show8()">
-  <area class="tmp" shape="circle" coords="320,675,15" alt="Foot" id="s9" onMouseOver="show9()">
-</map>
-
-<div class="circle1" id = "circle1"></div>
-<div class="circle2" id = "circle2"></div>
-<div class="circle3" id = "circle3"></div>
-<div class="circle4" id = "circle4"></div>
-<div class="circle5" id = "circle5"></div>
-<div class="circle6" id = "circle6"></div>
-<div class="circle7" id = "circle7"></div>
-<div class="circle8" id = "circle8"></div>
-<div class="circle9" id = "circle9"></div>
-
-```
-
-css
-
-```css
-#img1{
-  z-index:1;
-  position:absolute;
-  left:0px;
-  top:0px;
-  /*height: 800px;*/
-  /*width: 392px;*/
-}
-
-.circle1{
-  z-index: 100;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 270px;
-  top: 140px;
-}
-
-.circle2{
-  z-index: 101;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 100px;
-  top: 130px;
-}
-
-.circle3{
-  z-index: 102;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 280px;
-  top: 300px;
-}
-
-.circle4{
-  z-index: 103;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 290px;
-  top: 360px;
-}
-
-.circle5{
-  z-index: 104;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 85px;
-  top: 425px;
-}
-
-.circle6{
-  z-index: 105;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 305px;
-  top: 575px;
-}
-
-.circle7{
-  z-index: 106;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 170px;
-  top: 65px;
-}
-
-.circle8{
-  z-index: 106;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 120px;
-  top: 30px;
-}
-
-.circle9{
-  z-index: 106;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid red;
-  box-sizing: border-box;
-  position: absolute;
-  left: 330px;
-  top: 680px;
-}
-
-```
 
 amend script in index.html
 
@@ -692,31 +503,11 @@ amend script in index.html
       }
     }
 
-    function show1(){
-      alert("Class: Shoulder"+"\n\n"
-        +"Common symptoms: Shoulder pain occurs when the arm moves up and back, or even does not move"+"\n\n"
-        +"Cause: There is overuse and chronic inflammation, over-movement of the arm can cause the top of the upper limb bone to squeeze the shoulder sleeve muscles toward the upper end of the shoulder blade, which can cause muscle inflammation and swelling. If you continue to exercise despite inflammation, the tendon weakens and tears."+"\n\n"
-        +"Treatment: Many shoulder injuries can be recovered after rest. Nonsteroidal anti-inflammatory drugs (NSAIDs, such as ibuprofen) can also be used for short-term pain relief (up to 72 hours). Exercise helps."
-      );
-    }
 
-    function show2(){
-      alert("Class: Neck pain"+"\n\n"
-        +"Common symptoms: Cervical cervical vertebral disease"+"\n\n"
-        +"
-            
-            ...
-            ...
-            
-    function show9()
-      			...
-            hand in the direction of your back. Or choose a grip, handball, etc. At the same time, also avoid cold hands."
-      );
-    }
   </script>
 ```
 
-
+ 
 
 
 
@@ -794,76 +585,6 @@ So we modify the content of the file `bar-chart.component.css` like this:
 }
 .areas{
   text-align: center;
-}
-
-#header{
-  height: 60px ;
-  margin: 30px;
-  padding: 0;
-  border-radius: 30px;
-  background-color: rgb(162,181,205);
-  position: sticky;
-  top : 30px;
-  z-index: 999;
-  text-align: center;
-  font-family: Silom;
-  font-size: 45px;
-  line-height: 60px;
-  color: #46505a;
-}
-
-
-#footer{
-  margin: 10px 200px 0 200px;
-  height: 60px;
-
-  clear: right;
-  font-size: 14px;
-  font-family: Arial;
-
-  position: relative;
-  top: 10px;
-}
-
-#votesBarBox{
-  min-width: 1620px;
-
-}
-
-#body_left{
-  display: inline-block;
-  /*position: relative;*/
-  border-radius: 0 45px 45px 0;
-  height: 800px;
-  width: 1100px;
-  min-width: 500px;
-  background-color: rgb(238,233,233);
-}
-
-#body_right{
-  display: inline-block;
-  position: relative;
-  border-radius: 45px;
-  height: 800px;
-  width: 30%;
-  min-width: 400px;
-  vertical-align: top;
-  /*background-color: rgb(245,245,245);*/
-  /*background-color: #FFFFFF;*/
-  float: right ;
-  right: 0;
-  z-index: 500;
-  position: fixed;
-
-}
-
-#card-right{
-  height: 800px;
-  width: 300px;
-  min-width: 300px;
-  display: inline-block;
-  border: red solid 1px;
-  vertical-align: top;
 }
 
 ```
