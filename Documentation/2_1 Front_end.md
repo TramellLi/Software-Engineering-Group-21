@@ -643,10 +643,10 @@ amend script in index.html
         var rw = myImage.naturalWidth;
         var rh = myImage.naturalHeight;
       }
-      // 获取宽高
+      // get new width and height
       let pageWidth = rw;
       let pageHeight = rh;
-      // 图片原始尺寸
+      // image original size
       let imageWidth = 392;
       let imageHeight = 800;
 
@@ -654,10 +654,10 @@ amend script in index.html
 
       for (let i = 0; i < 2; i++) {
         if(i%2==0){
-          // 新的x轴坐标
+          // new x coordinate
           each[i] = Math.round(parseInt(each[i]) * pageWidth / imageWidth).toString();
         }else{
-          // 新的y轴坐标
+          // new y coordinate
           each[i] = Math.round(parseInt(each[i]) * pageHeight / imageHeight).toString();
         }
       }
