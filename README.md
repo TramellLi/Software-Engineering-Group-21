@@ -26,4 +26,22 @@ We figured that we could come up with an easy and comprehensive guide in the for
 
 Our website is not your regular fitness&training website, nor is it another webisite loaded with heavy medical terms intended only for medics or physiotherapists to visit. It is going to be a simple and comprehensive guide involving the silhouette of a human body with certain parts, when being clicked will provide users with the **name**, **description of pain**, **causes of pain**, and a **list of possible solutions**.  
 
+**[1. Background and Motivation]**
+**[2.1 Front-end]**
+**[2.2 Middle tier & Back-end ]**
+**[3. UX Design]**
+**[4. Project Management]**
+**[5. Evaluation]**
+**[6. Conclusion]**
 
+
+
+
+
+[1. Background and Motivation]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/1_background.md
+[2.1 Front-end]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/2_1%20Front_end.md
+[2.2 Middle tier & Back-end ]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/2_2%20Middle_tier%20%26%20back-end%20%26%20deployment%20.md
+[3. UX Design]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/3_uxDesign.md
+[4. Project Management]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/4_sprintsProjectManagement.md
+[5. Evaluation]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/5_Evaluation.md
+[6. Conclusion]:https://github.com/TramellLi/Software-Engineering-Group-21/blob/main/Documentation/5_conclusion.md
