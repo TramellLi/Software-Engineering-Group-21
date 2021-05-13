@@ -2,15 +2,16 @@
 
 In our project, middle tier is more concerned about data transfer and the application of API and it helps define routing. 
 
-Node.js & RESTful API
+Node.js & RESTful API  
 For the middle tier, the major technique we use are node.js and RESTful API. 
 Firstly, we used Node.js routing and two major routes in our project are /comments and /bodyParts. 
-Additionally, we used two approaches under Node.js RESTful API which are ‘GET’ & ‘PUT’. 
-Examples: 
-GET /BodyParts/ID to get certain body parts’ symptoms and relief advice.
+Additionally, we used two approaches under Node.js RESTful API which are ‘GET’ & ‘PUT’.  
+Examples:  
+GET /BodyParts/ID to get certain body parts’ symptoms and relief advice.  
 PUT /Comments to update user generated comments. 
 
-As for data transfer between front end and server, we had two options to choose from 1) using form 2) using AJAX. Considering that not only would our app need to transfer data from back-end to front-end but also did the other way transfer, AJAX allows this and makes it more efficient. The user interaction has a design involving real time update of part of the webpage. When user click on the bar chart to vote for the occupational diseases they have, the corresponding bar chart number would grow by one. Therefore, the data transfer is not limited to from back-end to front-end but also involves from front-end to back-end and we need AJAX here to help us deal with it. With AJAX, we do not need to load the entire page again to see some updates to certain part.  
+As for data transfer between front end and server, we had two options to choose from 1) using form 2) using AJAX.  
+Considering that not only would our app need to transfer data from back-end to front-end but also did the other way transfer, AJAX allows this and makes it more efficient. The user interaction has a design involving real time update of part of the webpage. When user click on the bar chart to vote for the occupational diseases they have, the corresponding bar chart number would grow by one. Therefore, the data transfer is not limited to from back-end to front-end but also involves from front-end to back-end and we need AJAX here to help us deal with it. With AJAX, we do not need to load the entire page again to see some updates to certain part.  
 So we planned to use AJAX and its request & response framework: 
 
         $.ajax({
