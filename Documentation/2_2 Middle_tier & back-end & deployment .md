@@ -20,7 +20,6 @@ So we planned to use AJAX and its request & response framework:
         Success:function(data){…}
         });
 
-
 As for server interaction with back-end, we have chosen to use ODM “Mongoose” to interact with the database as it is designed to work with asynchronous environment. It corresponds with our app’s demand for some asynchronous data transfer. 
         var mongoose = require (./db.js);
         var Schema = mongoose.Schema;
@@ -32,7 +31,20 @@ Therefore, for middle tier, we need to import Mongoose and the three APIs: db.js
 
 In our project, back-end is more concerned about data structure and data storage. The main data that needs to be read from database to front end is body parts’ symptoms and advice as well as data for the diseases situation bar chart. 
 
-**(1)	MongoDB 数据库部分 chen jian    **
+(1)	MongoDB & database:  
+Body & Comment data structure Schema defined:  
+        
+        var BodySchema = new Schema({
+           _id: Number,
+           partName: String,
+           solution: String,
+           voteNumber: Number
+        })
+
+        var CommentSchema = new Schema({
+           content: String,
+           bodyPart: Number
+        })
 
 (2)	Data persistent storage:  
 Due to the docker image characteristic, there would be no database in the main image of the project as the database would be in a separate image when docker compose up. Therefore, we were forced to come up with other ways to deal with data storage issue. We have some static data which would not be changed by users, so we need to make it persistent. We tried to include the binary files inside the database folder to build the image. However, different machines would read them differently. As we need to deploy the database server inside a container through an image rather than a stable physical server, the local static data may be exported to a json file either included in the database image or the project image. In order to keep the database image specific, we chose to use the official Mongodb image and create an empty database folder in the volume mounted on run time machine when data server is setting up. Under this method, all the raw data is stored in two json files BodyPartsSeed.json & CommentsSeed.json. Then a seeding script would be used to automatically read data from json to a new database. Later on, data would be read from database to front end.  
