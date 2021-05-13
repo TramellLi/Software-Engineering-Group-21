@@ -34,7 +34,7 @@
 
 ![image-20210506182709078](https://i.imgur.com/iNVmV0p.png=centerme)
 
-### 1 .   Main framework: Angular.
+## 1 .   Main framework: Angular.
 
 Angular is an application design framework and development platform for creating efficient and sophisticated sigle-page apps.
 
@@ -48,7 +48,7 @@ Angular the a pretty integrated and mature framework, wihch means it is more pow
 
 
 
-#### 1.1 Angular Introduction
+### 1.1 Angular Introduction
 
 We are going to be using Angular for our client side development. Angular is used as a cross-platform tool, constructing applications with it makes codes can be used on different platform such as web, mobile web, mobile app, native app and desktop app. And Angular has the highest speed  and performance on web platform because it renders bu web worker and service, as well as high scalability based on RxJS Immutables.js and other modules which suitable for huge amount data. Developers and fans of Angular make this community active and vibrant, i.g. components, templates, toolkits, packages, pulgins in IDE, etc. As a result, a virtuous circle has been formed, in which more and more useful tools can appear, and developers can easily use them. 
 
@@ -83,7 +83,7 @@ Such as angular.json package.json src node_modules tsconfig.json and so on.
 
 
 
-#### 1.2 Front end Introduction
+### 1.2 Front end Introduction
 
 As mentioned above, as a preparatory work, you need some foundation to learn and use angular, which includes html css and JavaScript.
 In fact, the above three main knowledge are enough to complete the design and development of a web page, but if you want to run it completely, including the entire process of data from the server back-end database to the front-end, as well as the front-end page interacting with users Relying on some packages and tools is very necessary, only when writing some time-consuming, relatively simple pages, and relatively balanced static and dynamic, only use the above three skills. But if we want to make our application not only static pages, animations, interactions, not just aesthetically simple, display boring single pages, there is little interaction, there is no data flow page, you still need to be other Understand the use of tools. However, these three must be the foundation, that is to say, the three are fully proficient in order to master other tools faster. The tool only saves time and enhances the effect, but the basic principles are the same.
@@ -91,7 +91,7 @@ Here is a simple explanation. We are responsible for the front-end. Before using
 
 
 
-####    1.3 Balance Between those two
+###    1.3 Balance Between those two
 
 Therefore, as a beginner in web page development, it is very important to be able to find a balance between the two points. Why is it important? The important thing is how to make a decent application in a short period of time, and also have a certain learning and understanding of full-stack development. This is a challenge.
 One of the first points is that, starting from the basics, understand the principles and syntax from the bottom. The second point is to start directly from the angular framework to simplify the development process and save development time. The advantages and disadvantages of the two are very obvious. The former is simple and easy to learn, but it is far away from the real development, and the results produced are also very simple. If you don't need a lot of time to research, it is difficult to go deep and gain results. Create a powerful and beautiful interface. As for the latter, if you are eager to achieve success and have not a solid foundation, you will be blindfolded during the development process. Many things do not understand why you want to do this, and you don't know how to solve the problem. This is what we have summed up in actual learning and development.
@@ -107,7 +107,7 @@ Here is a brief list of two practical cases, but also to the following paragraph
 
 
 
-### 2 . Functionalities of our project
+## 2 . Functionalities of our project
 
 In this section, I'm going to cover the main features that our application will implement, because the determination of functionality doesn't fall into the front-end category, but it's relevant, and I'll briefly cover it here.
 After all, we wouldn't develop features that the front end can't implement, or that are very difficult to implement. So we're still very confident in our understanding of Serious Play, just to say that we've made concessions on the feasibility of it. So from the first time we met to discuss what we wanted to do, we had a lot of whimsy about making our pages useful and playful, but after a period of study and discussion, we scaled back our engineering. Animations and effects that were initially expected but phased out are placed in future iterations and are currently only available in versions that are higher than the minimum feasible version.
@@ -132,7 +132,7 @@ Of course, everything is a double-edged sword, which undoubtedly adds a step, th
 
 Our app has three functions, one is to be able to click on the human body, generate corresponding, give users feedback some valuable information, one is the voting session, the last is, the comment area. We'll cover it in more detail below.
 
- #### 2.1 Body parts & events
+ ### 2.1 Body parts & events
 
 This feature is arguably one of the most important features we want to do, and we want users to be attracted to the images of human body on the page when they open the page and eager to interact. We specifically mark the vulnerability of the characters, and the cues of these places make it feel like they can move their mouse and interact with them. 
 
@@ -178,16 +178,16 @@ css
 }
 ```
 
-***Implementation:***
+### Implementation:
 The two major activities in body parts implementation are positioning and mouse move over event. We don't need to capture the position of the mouse, we just need to set the events that can be triggered in the specified locale. It's hard to know how this triggerable area can be relatively fixed when the page size or scroll changes, and the positioning doesn't shift when inserted into the overall page as a component, but according to what we expect, we do encounter this problem, and finally switch between several positioning attempts and get the right solution for relative coordinates.
 
-#### 2.1.1	Body parts positioning 
+### 2.1.1	Body parts positioning 
 In order to intuitively show the symptoms of different parts of the body to users, our team decided to add a picture of the human body and design a program that can interact on the picture.
 Therefore, we are faced with the problem of positioning different body parts in the picture. First, I consider using the canvas element in HTML, which is often used to draw graphics on Web pages. But the canvas element itself has no drawing ability, so all the drawing work must be completed in JavaScript, which increases the difficulty of the work. In addition, because I have images that I can call directly, I don't need to draw new images on the canvas. So I decided to call the picture directly in the div module, which makes the location of the picture easier.
 The body image is called in the div module, and the width and height of the picture are the default values. In CSS, the left value and top value of the image are set to 0, and the position value is set to absolute, so that the image can cling to the edge of the div module, making the positioning more accurate. Then, use the "use map" function to create a map on the image. Based on the created map, according to the default width and height of the image, find out the coordinates of the body parts to be identified on the map, and set up the relevant area.
 However, the scale of the image may change with the change of different browser interfaces, which will cause the previously marked coordinates are no longer accurate, so it is impossible to accurately locate. Therefore, I created new functions "adjust" and "adjust position" in script to adjust the area hot area coordinates of map elements to adapt the window size. After getting the ratio of the original width and height of the image and the initial coordinate point, use the function "adjust position" to get the actual width and height of the image in the browser. I considered using body. Clientwidth and body. Clientheight to get the width and height of the browser. However, due to the incompatibility of different browsers, the missing data will not be accurate. I changed body.clientwidth to image.naturalwidth. In this way, I can directly get the real data of the pictures on the web page. Calculate the ratio of the original height and width of the image to the actual height and width, and use this ratio to obtain the new coordinate point. Finally, the circle image is created to identify the identified part, which can achieve accurate positioning.
 
-#### 2.1.2	Mouse move over event triggering 
+### 2.1.2	Mouse move over event triggering 
 In order to show the symptoms and suggestions related to different parts of the body, I intended to use the pictures to show the symptoms when I moved the mouse over the picture to the set area. However, the frequent appearance of images will make the browser interface look very messy, and may block other content. Therefore, I decided to use the alert function to display the relevant text in the pop-up window on the web page, so as to explain the name of the disease, the cause and the treatment method in more detail. Therefore, I defined their IDs for different map areas, and added the corresponding show function in the script. And use the "OnMouseOver" function to start the show function. When the mouse moves to the relevant area, the "OnMouseOver" function detects the mouse moving in the area and calls the "show" function. At this time, the "show" function will call the alert function to display all the information of this area. The IDs of these areas can be identified and used when contacting the back-end database. 
 We drew little circles on human body to inform users that there are some points you can click on the body. The reason why we inserted the little circle in the form of picture is that we planned to add events to each one of them and tag them with specific id number in order to trace them later during data transfer section. However, later on, we inserted the mouseover event on human body and broadened the trigger area in order to make the alert event easier to be triggered. We planned to use event type of ‘mouseover’ because it would be more obvious and user friendly as when users use their mouses over the body, the pop up window would automatically show up. 
 
@@ -197,7 +197,7 @@ We drew little circles on human body to inform users that there are some points 
 
 
 
-#### 2.2 vote
+### 2.2 vote
 
 **intro**
 
@@ -215,7 +215,7 @@ The main point here is to familiarize yourself with the properties and usage met
 
 The difficulty here is not expected, but let us encounter, the chart will not be updated with the button pressed, data updates, we found through testing, when the button is pressed, the data has changed, but the length of the bar chart has not changed, here is a difficult point, in writing here has not been resolved, but still looking for elegant solutions.
 
-#### 2.3 comments
+### 2.3 comments
 
 **brief intro**
 
@@ -247,7 +247,7 @@ The third area, which is a footer area, was originally planned to house disclaim
 
 So what method to divide these three areas, from traditional to modern methods have about the following three, first, the use of cable tags, which is the earliest web design when developers like the most commonly used typography, but over time and the emergence of a variety of practical tools, this approach gradually eliminated. Similar but more modern than this approach there is a library of front-end components called bootstrap, which has a feature feature, a grid system, to divide the layout of pages. But in fact, bootstrap in addition to this feature has a lot of useful features, but here we only need one, layout planning. So we used more direct div blocks plus css positioning to divide the area of our web pages. The advantage of doing this over bootstrap is that div blocks can be displayed in very highly customized blocks after they have been sorted by css. For example, we want header's top bar section to always be top of everything, no matter how the page size changes and how the page scrolls, it stays in place and at the top. In another example, our body part is expected to float above the table, rather than being squeezed to the next row after the browser window width has been manually adjusted to be smaller. How to implement it I'll list the code and explain it in the next section.
 
-#### 3.1 bootstrap
+### 3.1 bootstrap
 
 Bootstrap is a popular front-end framework, based on html css jss. It is simple and flexible relatively fast for web development.
 
@@ -263,28 +263,28 @@ It is open source
 
 It's really powerful, but it's also because it's so powerful that our demo application at this stage may not be able to use it, at least in terms of zoning, we have more flexibility and more appropriate options. I believe that in a real-world enterprise-level project, bootstrap has an absolute advantage, but in our project, fun itself is a part of our project, our page does not have a commercial use plan, so nothing so rigorous and have some casual style is still acceptable. Of course, we won't use bootstrap for zoning at this stage, but we'll take advantage of its other features.
 
-#### 3.2 div + CSS
+### 3.2 div + CSS
 
 This approach is best suited to layout division, but it has several advantages: first, the tool does not need to be very powerful, just good enough to achieve the requirements, and that is it. Second, the degree of customization is higher, more flexible. In my example above, it is not difficult to see its advantages.
 
 Similarly, in the next section, I'll use our actual code and some appropriate and necessary explanations to explain how we can use this approach to solve the web page division requirement.
 
-#### 3.3 table tag
+### 3.3 table tag
 
 This is a traditional and outdated approach, and functional limitations exist, so this approach is not chosen to implement it.
 
-### 4 . Features implementation
+## 4 . Features implementation
 
 This chapter, is the last section of front-end development, the previous sections describe the comparative theory, stay in the design ideas and implementation ideas. In this section we'll actually paste some code in, do some explanations, and the entire development process. There may be fewer detours to show the latest code directly, but words will still be used to describe some of the key turning points and the different scenarios explored.
 Below, I will cut into the different sections, detailing how to build the current page, but also mention that there are better implementation methods, room for improvement, problems that have been solved and unresolved difficulties.
 
-#### 4.1 files
+### 4.1 files
 
 The following diagram, part of the entire project Chinese and folders, shows two custom components that contain key code to implement our main functionality.
 
 ![image-20210507010431994](https://i.imgur.com/COSuqTR.png=centerme)
 
-#### 4.2 Steps
+### 4.2 Steps
 
 this Part is to start describing the process of building the entire project. And take the final code as an example to report.
 
