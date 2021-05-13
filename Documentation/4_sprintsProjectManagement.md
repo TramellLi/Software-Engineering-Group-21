@@ -168,7 +168,7 @@ Ask teacher about the advice we give to people
 - Discuss data storage and seeding issue.
 
 ---
-Spring for data transfer
+Sprint for data transfer
 
 ---
 

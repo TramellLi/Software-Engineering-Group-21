@@ -1,7 +1,7 @@
 # Conclusion
 
  
-**General reflection over the project**
+**General reflection over the project **
 
 The cooperation between front end and back end had been challenging for this project. Despite having met up on a regular basis and have had well defined scope from the beginning, we have taken a ridgid approach in delegating work for this project. We clarified and delegated roles to all group members right at the start and thinking that Front-end will only need to learn about front-end and back-end person would only need to learn about back-end content and we fell short on time as our front-end developers had to go off and learn some more backend-related content and vice versa to make everything work. Not being able to see the overlappig aspect of front and back-end resulted a lot of struggle when working with data transfer and the process of applying API in the whole of this project. To solve this we used several small Sprints over the past two week to cut down the API coding and divided the process into smaller steps and tried every step by trail and error. 
 
