@@ -23,6 +23,17 @@ However, there are some limitations inherent in the technique we used. The quest
 #### Timeline of evaluation 
 
 #### Unit/Functional testing
+To prevent software defects, our group uses Jasmine as well as KARMA to test our codes.  
+Functional testing plan: 
+1.Test body part mouse moveover event 
+2.Test if comments are correctly displayed
+3.Test user comment function 
+Used KARMA to run the testing.  
+ 
+Other webpage functional checking:  
+(1) Whether the link/url is valid; 
+(2) Whether the webpage can cater to different browser types or versions and browser on phone;
+(3) Webpage load speed check. 
 
 
 #### User acceptance testing
