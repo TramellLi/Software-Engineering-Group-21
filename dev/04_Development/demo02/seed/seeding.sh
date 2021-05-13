@@ -8,5 +8,5 @@ db.createCollection("BodyParts");
 db.createCollection("Comments");
 EOF
 
-mongoimport --db meandb --collection BodyParts --jsonArray --drop --file /home/init/BodyParts.json
-mongoimport --db meandb --collection Comments --jsonArray --drop --file /home/init/Comments.json
+mongoimport --db meandb --collection BodyParts --jsonArray --drop --file /home/init/BodyPartsSeed.json
+mongoimport --db meandb --collection Comments --jsonArray --drop --file /home/init/CommentsSeed.json
