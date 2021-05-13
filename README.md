@@ -25,3 +25,5 @@ With the ever-increasing number of hours stated on our Weekly Screentime Report 
 We figured that we could come up with an easy and comprehensive guide in the form of a interactive website that aims to increase our user's awareness on the importance of good posturing and maybe even develop an incentive for users to engage in frequent exercises in the long-run.
 
 Our website is not your regular fitness&training website, nor is it another webisite loaded with heavy medical terms intended only for medics or physiotherapists to visit. It is going to be a simple and comprehensive guide involving the silhouette of a human body with certain parts, when being clicked will provide users with the **name**, **description of pain**, **causes of pain**, and a **list of possible solutions**.  
+
+
