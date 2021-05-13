@@ -21,18 +21,31 @@ This is used more to get more detailed views and feelings towards our app , and 
 However, there are some limitations inherent in the technique we used. The questions in the questionnair might be leading （有引导性的）.
 
 #### Timeline of evaluation 
+-April 20th :  
+Start unit testing 
+Invite mates to review our webpage & fill questionnair
+-April 25th:
+Collect all feedbacks and analyze on them
+Modify our webpage according to feedback
+-May 1st: 
+Invite people again to fill the questionnaire/interview;
+-May 5th:
+Collect & analyze feedback 
+Do final modification on webpage contents
+-May 11th:
+Finish unit tesing
 
 #### Unit/Functional testing
 To prevent software defects, our group uses Jasmine as well as KARMA to test our codes.  
-Functional testing plan: 
-1.Test body part mouse moveover event 
-2.Test if comments are correctly displayed
+Functional testing plan:  
+1.Test body part mouse moveover event   
+2.Test if comments are correctly displayed  
 3.Test user comment function 
 Used KARMA to run the testing.  
  
 Other webpage functional checking:  
-(1) Whether the link/url is valid; 
-(2) Whether the webpage can cater to different browser types or versions and browser on phone;
+(1) Whether the link/url is valid;   
+(2) Whether the webpage can cater to different browser types or versions and browser on phone;  
 (3) Webpage load speed check. 
 
 
@@ -40,8 +53,8 @@ Other webpage functional checking:
 For user acceptance testing, our group choose to use quantitative method and focus on several criteria when designing and analyzing the questionnaire for our users, including the following:
 
 •	Web convenience level 
-•	Measure touchpoint events  
-•	User engagement level 
+•	Measure touchpoint events    
+•	User engagement level   
      -Click rate / vote rate
      -Site visitor surfing time  
 •	Ease of understanding  
