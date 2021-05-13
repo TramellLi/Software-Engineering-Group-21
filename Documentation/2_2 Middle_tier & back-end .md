@@ -13,12 +13,13 @@ PUT /BarChart/ID to update bar chart data.
 As for data transfer between front end and server, we had two options to choose from 1) using form 2) using AJAX. Considering that not only would our app need to transfer data from back-end to front-end but also did the other way transfer, AJAX allows this and makes it more efficient. The user interaction has a design involving real time update of part of the webpage. When user click on the bar chart to vote for the occupational diseases they have, the corresponding bar chart number would grow by one. Therefore, the data transfer is not limited to from back-end to front-end but also involves from front-end to back-end and we need AJAX here to help us deal with it. With AJAX, we do not need to load the entire page again to see some updates to certain part.  
 So we planned to use AJAX and its request & response framework: 
 
-$.ajax({
-Type:”PUT”.
-url:”../BarChart”.
-Data.sendData.
-Success:function(data){…}
-});
+        $.ajax({
+        Type:”PUT”.
+        url:”../BarChart”.
+        Data.sendData.
+        Success:function(data){…}
+        });
+
 
 **（这里可能还有需要添加的地方，留个记号，是接在ajax后面的）**
 
@@ -32,6 +33,7 @@ Therefore, for middle tier, we need to import Mongoose and the three APIs: db.js
 # Back-end:
 
 In our project, back-end is more concerned about data structure and data storage. The main data that needs to be read from database to front end is body parts’ symptoms and advice as well as data for the diseases situation bar chart. 
+
 **(1)	MongoDB 数据库部分（数据关系图….）chen jian    **
 
 (2)	Data persistent storage: 
