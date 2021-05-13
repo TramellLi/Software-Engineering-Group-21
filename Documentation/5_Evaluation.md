@@ -42,8 +42,8 @@ For user acceptance testing, our group choose to use quantitative method and foc
 •	Web convenience level 
 •	Measure touchpoint events  
 •	User engagement level 
-        -Click rate / vote rate            
-        -Site visitor surfing time  
+     -Click rate / vote rate
+     -Site visitor surfing time  
 •	Ease of understanding  
 •	Content quality 
 
