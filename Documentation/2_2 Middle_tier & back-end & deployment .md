@@ -53,7 +53,7 @@ Package.json
 
 
 
-# Deployment details (including Docker), include how you have been achieving continuous integration and deployment:
+# Deployment details (Docker, continuous integration):
 Our group uses Docker image to help us with deployment and continuous integration. As for deployment, our group uses Docker to unify the web development environment. We all practiced the use of Docker and one of us uploaded his image. Then all other group mates pulled this image and started to use this image.
 
 We also authorize the github project on dockHub to achieve continuous integration. By doint so, when there are updates on github project, the Dockerfile would automatically be executed and be composed up. The new compose up result would be saved in the dockerHub container. 
