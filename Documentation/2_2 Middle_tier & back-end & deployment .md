@@ -1,15 +1,15 @@
 # Middle-tier:
 
 In our project, middle tier is more concerned about data transfer and the application of API and it helps define routing. 
-Node.js & RESTful API
 
+Node.js & RESTful API
 For the middle tier, the major technique we use are node.js and RESTful API. 
 Firstly, we used Node.js routing and two major routes in our project are /Comments and /BodyParts. 
 Additionally, we used two approaches under Node.js RESTful API which are ‘GET’ & ‘PUT’. 
-
 Examples: 
 GET /BodyParts/ID to get certain body parts’ 
 PUT /BarChart/ID to update bar chart data. 
+
 As for data transfer between front end and server, we had two options to choose from 1) using form 2) using AJAX. Considering that not only would our app need to transfer data from back-end to front-end but also did the other way transfer, AJAX allows this and makes it more efficient. The user interaction has a design involving real time update of part of the webpage. When user click on the bar chart to vote for the occupational diseases they have, the corresponding bar chart number would grow by one. Therefore, the data transfer is not limited to from back-end to front-end but also involves from front-end to back-end and we need AJAX here to help us deal with it. With AJAX, we do not need to load the entire page again to see some updates to certain part.  
 So we planned to use AJAX and its request & response framework: 
 
@@ -21,12 +21,10 @@ So we planned to use AJAX and its request & response framework:
         });
 
 
-**（这里可能还有需要添加的地方，留个记号，是接在ajax后面的）**
-
 As for server interaction with back-end, we have chosen to use ODM “Mongoose” to interact with the database as it is designed to work with asynchronous environment. It corresponds with our app’s demand for some asynchronous data transfer. 
- 
+        var mongoose = require (./db.js);
+        var Schema = mongoose.Schema;
 Therefore, for middle tier, we need to import Mongoose and the three APIs: db.js, BodyParts.js and Comments.js. 
-
 
 
 
@@ -55,6 +53,7 @@ Package.json
 
 
 
-Deployment details (including Docker), include how you have been achieving continuous integration and deployment.
+# Deployment details (Docker, continuous integration):
 Our group uses Docker image to help us with deployment and continuous integration. As for deployment, our group uses Docker to unify the web development environment. We all practiced the use of Docker and one of us uploaded his image. Then all other group mates pulled this image and started to use this image.
+
 We also authorize the github project on dockHub to achieve continuous integration. By doint so, when there are updates on github project, the Dockerfile would automatically be executed and be composed up. The new compose up result would be saved in the dockerHub container. 
