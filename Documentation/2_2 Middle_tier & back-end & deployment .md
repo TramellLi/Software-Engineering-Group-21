@@ -21,8 +21,10 @@ So we planned to use AJAX and its request & response framework:
         });
 
 As for server interaction with back-end, we have chosen to use ODM “Mongoose” to interact with the database as it is designed to work with asynchronous environment. It corresponds with our app’s demand for some asynchronous data transfer. 
+
         var mongoose = require (./db.js);
         var Schema = mongoose.Schema;
+    
 Therefore, for middle tier, we need to import Mongoose and the three APIs: db.js, BodyParts.js and Comments.js. 
 
 
