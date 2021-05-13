@@ -1,6 +1,24 @@
 # Conclusion
 
 ### Reflection over project workflow:
+ 
+**	Work practices of my group **
+The cooperation between front end and back end had been challenging for this project. Despite having met up on a regular basis and have had well defined scope from the beginning, we have taken a ridgid approach in delegating work for this project. We clarified and delegated roles to all group members right at the start and thinking that Front-end will only need to learn about front-end and back-end person would only need to learn about back-end content and we fell short on time as our front-end developers had to go off and learn some more backend-related content and vice versa to make everything work. Not being able to see the overlappig aspect of front and back-end resulted a lot of struggle when working with data transfer and the process of applying API in the whole of this project. To solve this we used several small Sprints over the past two week to cut down the API coding and divided the process into smaller steps and tried every step by trail and error. 
+
+**	Success level of our project **
+Overall, our project has achieved the basic functions that we want to implement. Such as clickable tags that prompts a little window with information displayed, gathering votes from users and displaying it on our barchart. However, visually, we have eventually strayed off from the original plan during the building process, we have had to sacrifice some of the functions and objects, such as having a more animated version of the human body making the app more interactive and aesthetically pleasing. 
+
+**	The impact of coronavirus on our project**
+Working remotely from home has been the new norm since the pandemic, increasing the chance of discomfort resulted frmo static sitting, the type of occupational disease that people normally get from working in an office. In this context, it makes our app very relatable and relevant for anyone who works from home.
+
+Having to work remotely from home has affected our ability to coorperate to a certain extend. However, due to the different range of personalities in our team, some of our members do believe that meeting up in person during the planning phase could have been valuable team-building experience to speed up the process of getting used to work with each other. However we did overcome this unpleasant aspect of our project by agreeing on turning our camera on for our meetings once in a while.  
+
+** Social & ethical implication （按网页上的就好）**
+•	Future work 
+1.	Make the webpage more interactive with more playful functions. 
+2.	Design some small rewards for users to encourage them to do the voting and commenting. 
+3.	Add user authentication to personalize the webpage for every user. 
+4.	Beautify our webpage with a more vivid human body. 
 
 
 
