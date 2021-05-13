@@ -10,6 +10,7 @@ const db =  require('./server/model/db')
 // Get our API routes
 const api = require('./server/routes/api');
 const comments = require('./server/routes/comments');
+const bodyParts = require('./server/routes/bodyParts');
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'dist/demo02')));
 // Set our api routes
 app.use('/api', api);
 app.use('/comments', comments);
+app.use('/bodyparts', bodyParts);
 
 //Set 404
 // app.use(function(req, res, next){
