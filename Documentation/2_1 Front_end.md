@@ -11,8 +11,8 @@
  	  	2. Front end Introduction
  	  	3. Balance Between those two
  	2. Functionalities of our project
- 	  	1. body click
- 	  	2. vote
+ 	  	1. Body parts & events
+ 	  	2. Barchart * Votes
  	  	3. comments
  	3. Layout of the single page web application.
  	 	1. bootstrap
@@ -132,11 +132,29 @@ Of course, everything is a double-edged sword, which undoubtedly adds a step, th
 
 Our app has three functions, one is to be able to click on the human body, generate corresponding, give users feedback some valuable information, one is the voting session, the last is, the comment area. We'll cover it in more detail below.
 
-**2.1 body click**
+**2.1 Body parts & events**
 
-This feature is arguably one of the most important features we want to do, and we want users to be attracted to the images of people on the page when they open the page and eager to interact. We specifically mark the vulnerability of the characters, and the cues of these places make it feel like they can click and interact with them.
-***Implementation: Chognyan qi does this part, which he writes in more detail***
-One of the difficulties: Here is the point of implementing this function is positioning and mouse response, of course, this is also called the same difficulty. We don't need to capture the position of the mouse, we just need to set the events that can be triggered in the specified locale. It's hard to know how this triggerable area can be relatively fixed when the page size or scroll changes, and the positioning doesn't shift when inserted into the overall page as a component, but according to what we expect, we do encounter this problem, and finally switch between several positioning attempts and get the right solution for relative coordinates.
+This feature is arguably one of the most important features we want to do, and we want users to be attracted to the images of human body on the page when they open the page and eager to interact. We specifically mark the vulnerability of the characters, and the cues of these places make it feel like they can move their mouse and interact with them. 
+
+
+***Implementation:***
+The two major activities in body parts implementation are positioning and mouse move over event. We don't need to capture the position of the mouse, we just need to set the events that can be triggered in the specified locale. It's hard to know how this triggerable area can be relatively fixed when the page size or scroll changes, and the positioning doesn't shift when inserted into the overall page as a component, but according to what we expect, we do encounter this problem, and finally switch between several positioning attempts and get the right solution for relative coordinates.
+
+**2.1.1	Body parts positioning** 
+In order to intuitively show the symptoms of different parts of the body to users, our team decided to add a picture of the human body and design a program that can interact on the picture.
+Therefore, we are faced with the problem of positioning different body parts in the picture. First, I consider using the canvas element in HTML, which is often used to draw graphics on Web pages. But the canvas element itself has no drawing ability, so all the drawing work must be completed in JavaScript, which increases the difficulty of the work. In addition, because I have images that I can call directly, I don't need to draw new images on the canvas. So I decided to call the picture directly in the div module, which makes the location of the picture easier.
+The body image is called in the div module, and the width and height of the picture are the default values. In CSS, the left value and top value of the image are set to 0, and the position value is set to absolute, so that the image can cling to the edge of the div module, making the positioning more accurate. Then, use the "use map" function to create a map on the image. Based on the created map, according to the default width and height of the image, find out the coordinates of the body parts to be identified on the map, and set up the relevant area.
+However, the scale of the image may change with the change of different browser interfaces, which will cause the previously marked coordinates are no longer accurate, so it is impossible to accurately locate. Therefore, I created new functions "adjust" and "adjust position" in script to adjust the area hot area coordinates of map elements to adapt the window size. After getting the ratio of the original width and height of the image and the initial coordinate point, use the function "adjust position" to get the actual width and height of the image in the browser. I considered using body. Clientwidth and body. Clientheight to get the width and height of the browser. However, due to the incompatibility of different browsers, the missing data will not be accurate. I changed body.clientwidth to image.naturalwidth. In this way, I can directly get the real data of the pictures on the web page. Calculate the ratio of the original height and width of the image to the actual height and width, and use this ratio to obtain the new coordinate point. Finally, the circle image is created to identify the identified part, which can achieve accurate positioning.
+
+**2.1.2	Mouse move over event triggering** 
+In order to show the symptoms and suggestions related to different parts of the body, I intended to use the pictures to show the symptoms when I moved the mouse over the picture to the set area. However, the frequent appearance of images will make the browser interface look very messy, and may block other content. Therefore, I decided to use the alert function to display the relevant text in the pop-up window on the web page, so as to explain the name of the disease, the cause and the treatment method in more detail. Therefore, I defined their IDs for different map areas, and added the corresponding show function in the script. And use the "OnMouseOver" function to start the show function. When the mouse moves to the relevant area, the "OnMouseOver" function detects the mouse moving in the area and calls the "show" function. At this time, the "show" function will call the alert function to display all the information of this area. The IDs of these areas can be identified and used when contacting the back-end database. 
+We drew little circles on human body to inform users that there are some points you can click on the body. The reason why we inserted the little circle in the form of picture is that we planned to add events to each one of them and tag them with specific id number in order to trace them later during data transfer section. However, later on, we inserted the mouseover event on human body and broadened the trigger area in order to make the alert event easier to be triggered. We planned to use event type of ‘mouseover’ because it would be more obvious and user friendly as when users use their mouses over the body, the pop up window would automatically show up. 
+
+
+
+
+
+
 
 **2.2 vote**
 
@@ -460,14 +478,6 @@ This command calls a utility function which helpfully adds:
 2. src/app/main-body/main-body.component.ts
 3. src/app/main-body/main-body.component.css
 4. src/app/main-body/main-body.component.spec.ts
-
-html 
-
-Location
-  Call the "usemap" function to create a map on the body image. Based on the created map, find out the coordinates of the body parts to be identified on the map, and set up the relevant area. However, the scale of the image will change with the change of different browser interfaces, which will cause the previously marked coordinates are no longer accurate, so it is impossible to accurately locate. Therefore, I created new functions "adjust" and "adjust position" to adjust the area hot area coordinates of map elements to adapt the window size. First, the ratio of the original width and height of the image and the initial coordinate point are obtained. Then, use the function "adjust position" to get the actual width and height of the image in the browser. Finally, the ratio of the original height and width of the image to the actual height and width is calculated, and the new coordinate points are obtained with this ratio. In this way, accurate positioning can be achieved.
-
-Trigger the pop-up window
- In order to show the symptoms and suggestions related to different parts of the body, I intended to use the pictures to show the symptoms when I moved the mouse over the picture to the set area. However, the frequent appearance of images will make the browser interface look very messy. Therefore, I decided to use the alert function to display the relevant text in a pop-up window on the web page, so that I can explain it in more detail. Therefore, I defined their IDs for the area areas of different maps, and used the "OnMouseOver" function in them. When the mouse moves to the relevant area, call the "show" function to display all the information of this area. The ID associated with this area can be identified and used when contacting the back-end database.
 
 
 ```html
