@@ -1,6 +1,11 @@
 # Conclusion
 
-### Evaluation our project in the light of ‘9 Principles of ethical innovation’:
+### Reflection over project workflow:
+
+
+
+
+### Reflection of our project in the light of ‘9 Principles of ethical innovation’:
 
 1. Design with the user:
   One of the potential users that we interviewed is on our course, and we were engaging in frequent voice calls when the group was deciding on what information to display on our app. Apart from expectations of information displayed to be straight forward, he/ she also wanted to feel a sense of being included in a group of people who is getting discomfort and chronic pains, and to make him feel less alone, we ended up deciding on making a chart to collect and display user statistics. 
