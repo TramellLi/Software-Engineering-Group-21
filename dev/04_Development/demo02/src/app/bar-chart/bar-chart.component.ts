@@ -1,16 +1,17 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { DataService } from '../data.service';
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChangeDetectorRef } from '@angular/core';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
-// import * as pluginAnnotations from 'chartjs-plugin-annotation';
+
 import { ElementRef } from '@angular/core';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import {Observable} from 'rxjs';
+
+// Here are some test or not used imports.
+// import { BODYPARTS } from '../tempBody';
+// import * as pluginAnnotations from 'chartjs-plugin-annotation';
 // import { Service } from '../service';
 // import { NzMessageService } from 'ng-zorro-antd';
-import { ChangeDetectorRef } from '@angular/core';
-import {Observable} from 'rxjs';
-// import { BODYPARTS } from '../tempBody';
-
-
 
 @Component({
   selector: 'app-bar-chart',
@@ -19,13 +20,16 @@ import {Observable} from 'rxjs';
 })
 
 export class BarChartComponent implements OnInit {
+  // not used commands
   // @ViewChild('regionCharts', {static: false}) regionCharts: any;
   // @Input() addItemStream: Observable<any> | undefined;
 
   constructor(private dataService: DataService, public changeDetectorRef: ChangeDetectorRef ) {
+    // render barchart
     this.retrieveData();
   }
 
+  // bar chart attributes, data are not used in real, styles are used
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -92,6 +96,7 @@ export class BarChartComponent implements OnInit {
   ngOnChange(){
     this.retrieveComments();
   }
+  // cellect data of vote from back end
   // tslint:disable-next-line:typedef
   retrieveData() {
     this.dataService.getAll().subscribe(
@@ -106,6 +111,7 @@ export class BarChartComponent implements OnInit {
       });
   }
 
+  // cellect data of comments from back end
   // tslint:disable-next-line:typedef
   retrieveComments() {
     this.dataService.getComments().subscribe(
@@ -121,6 +127,7 @@ export class BarChartComponent implements OnInit {
         console.log(error);
       });
   }
+  // cellect data of bodyparts from back end
   // tslint:disable-next-line:typedef
   retrieveBodyParts() {
     this.dataService.getBodyParts().subscribe(
@@ -138,6 +145,7 @@ export class BarChartComponent implements OnInit {
     return this.bodyParts;
   }
 
+  // button list event
   // tslint:disable-next-line:typedef
   clkbtn(barChartLabel: string){
     this.indexOfBar = this.barChartLabels.indexOf(barChartLabel);

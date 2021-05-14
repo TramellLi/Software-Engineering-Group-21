@@ -1,7 +1,12 @@
+<!-- Guide sentence-->
 <div style="z-index: 800; display: inline-block; position: relative; float: right; font-family: Silom; font-size: 20px">
   Hover mouse on red circles.
 </div>
+
+<!--Main body part show-->
 <img id="img1" src="/assets/body.png" alt="body" useMap="#planetMap">
+
+<!--Event on body, mouse hover-->
 <map name="planetMap" id="planetMap">
   <area class="tmp" shape="circle" coords="270,140,15" alt="Shoulder" id="s1" onMouseOver="show1()">
   <area class="tmp" shape="circle" coords="100,130,15" alt="Neck" id="s2" onMouseOver="show2()">
@@ -14,6 +19,7 @@
   <area class="tmp" shape="circle" coords="320,675,15" alt="Foot" id="s9" onMouseOver="show9()">
 </map>
 
+<!--related to the event, showing where is the event, guide user to activate-->
 <div class="circle1" id = "circle1"></div>
 <div class="circle2" id = "circle2"></div>
 <div class="circle3" id = "circle3"></div>

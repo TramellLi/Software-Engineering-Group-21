@@ -1,4 +1,4 @@
-
+<!--This is the chart.js, horizontal bar chart, to show our votes-->
 <div style="display: inline-block; width: 500px; " >
   <canvas id="myChart" baseChart width="2" height="3"
           [datasets]="barChartData"
@@ -11,6 +11,7 @@
   </canvas>
 </div>
 
+<!--This is a button list, to vote on the parts that user got same pain-->
 <div style="display: inline-block;height: 800px; width: 150px; position: absolute;left: 550px; font-family: Silom;">
   <button *ngFor="let barChartLabel of barChartLabels"
   style="display: block; width: 120px; margin: 38px 0 37px 0; height: 40px; border-radius: 5px"
@@ -20,6 +21,7 @@
   </button>
 </div>
 
+<!--This is the comment area-->
 <div style="display: inline-block; height: 700px; width: 300px; margin: 50px;  position: absolute;left: 680px;
             border-radius: 30px; padding: 20px; background-color: #e9e2e5; font-family: Silom;">
   <strong>Comments:</strong>
@@ -34,17 +36,13 @@
 
   <div style="position: absolute; left: 20px; top: 500px">
     <hr/>
-
       <input #commentValue id="textBox" type="text" size="15px">
       &nbsp;
       <button>Submit</button>
-
-
   </div>
 <!--  <div id="tst" style="border: #46505a solid 1px; width: 100px; height: 100px">-->
 <!--    {{tstString}}-->
 <!--  </div>-->
-
 </div>
 
 
