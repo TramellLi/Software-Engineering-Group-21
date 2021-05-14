@@ -17,7 +17,7 @@ According to this model, project would not be able to proceed until the first st
 
 
 
-![Project Timeline](https://i.imgur.com/jTQ9ymh.png=centerme)
+![Project Timeline](https://i.imgur.com/WqCwqLX.png=centerme)
 
 **1. Idea pitching and define requirement (11/02 – 09/03)**
 We started off with brainstorming and idea pitching and have steered towards creating an a health-related Single-page application. Over the course of the following weeks, we have decided to shrink the scope of our product down to a postural-related occupational diseases/discomfort body map for office workers. With the rough idea in mind, group members were set off to do some research on currently available health-related apps for inspirations, helping us to finally decide on what sections to include in our single webpage application. 
