@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Posture Right</title>
+  <base href="http://www.postureRight.com">
+  <meta name="Posture Right" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .id{
+      height:auto !important;
+      min-height:344px;
+    }
+  </style>
+
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <app-root id="app"></app-root>
+  <script>
+  window.onload = function (){
+    var url = "http://localhost:3000/BodyParts"
+    var request = new XMLHttpRequest();
+    request.open("get",url);
+    request.send((null));
+    request.onload = function (){
+      var json = JSON.parse(request.responseText);
+      console.log(json);
+    }
+  }
+
+    // const {BarChartComponent} = require("./app/bar-chart/bar-chart.component");
+    // import {BarChartComponent} from "./app/bar-chart/bar-chart.component";
+    // import {Observable} from "rxjs";
+
+    // const {HttpClient} = require("@angular/common/http");
+    // import {HttpClient} from "@angular/common/http";
+    //
+    // const {Observable} = require("rxjs");
+
+    // var bodyParts = [];
+    // var httpClient;
+    // var REST_API_SERVER_B = 'http://localhost:3000/BodyParts';
+    // function getBodyParts(){
+    //   return httpClient.get(REST_API_SERVER_B);
+    // }
+    // function retrieveBodyParts() {
+    //   getBodyParts().subscribe(
+    //     data => {
+    //       bodyParts = data;
+    //       // now let's update the fields
+    //       console.log('zzz' + data);
+    //       // for (let i = 0; i < 6; i++) {
+    //       //   this.comments[i] = this.bodyParts[i].content + '¬';
+    //       // }
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     });
+    // }
+    // retrieveBodyParts();
+
+    window.onload = function(){
+      adjust();
+      // passInfo();
+    }
+    // console.log('123' + bodyParts);
+
+    // console.log(this.barChartType);
+    // console.log('asd');
+    function adjustPosition(position) {
+      var myImage = document.getElementById("img1");
+      if (typeof myImage.naturalWidth == "undefined") {
+        // IE 6/7/8
+        var i = new Image();
+        i.src = myImage.src;
+        var rw = i.width;
+        var rh = i.height;
+      }
+      else {
+        // HTML5 browsers
+        var rw = myImage.naturalWidth;
+        var rh = myImage.naturalHeight;
+      }
+      // 获取宽高
+      let pageWidth = rw;
+      let pageHeight = rh;
+      // 图片原始尺寸
+      let imageWidth = 392;
+      let imageHeight = 800;
+
+      let each = position.split(",");
+
+      for (let i = 0; i < 2; i++) {
+        if(i%2==0){
+          // 新的x轴坐标
+          each[i] = Math.round(parseInt(each[i]) * pageWidth / imageWidth).toString();
+        }else{
+          // 新的y轴坐标
+          each[i] = Math.round(parseInt(each[i]) * pageHeight / imageHeight).toString();
+        }
+      }
+      let newPosition = "";
+      for (let j = 0; j < each.length; j++) {
+        newPosition += each[j];
+        if (j < each.length - 1) {
+          newPosition += ",";
+        }
+      }
+      return newPosition;
+    }
+
+    function adjust() {
+      let map = document.getElementById("planetMap");
+      let area = map.getElementsByTagName('area');
+
+      for (let i = 0; i < area.length; i++) {
+        let oldCoords = area[i].getAttribute("coords");
+        let newCoords = adjustPosition(oldCoords);
+        area[i].setAttribute("coords", newCoords);
+      }
+    }
+
+    function show1(){
+      alert("Class: Shoulder"+"\n\n"
+        +"Common symptoms: Shoulder pain occurs when the arm moves up and back, or even does not move"+"\n\n"
+        +"Cause: There is overuse and chronic inflammation, over-movement of the arm can cause the top of the upper limb bone to squeeze the shoulder sleeve muscles toward the upper end of the shoulder blade, which can cause muscle inflammation and swelling. If you continue to exercise despite inflammation, the tendon weakens and tears."+"\n\n"
+        +"Treatment: Many shoulder injuries can be recovered after rest. Nonsteroidal anti-inflammatory drugs (NSAIDs, such as ibuprofen) can also be used for short-term pain relief (up to 72 hours). Exercise helps."
+      );
+    }
+
+    function show2(){
+      alert("Class: Neck pain"+"\n\n"
+        +"Common symptoms: Cervical cervical vertebral disease"+"\n\n"
+        +"Cause: Prolonged incorrect sitting causes the biometric balance of the neck ligament muscles to be broken"+"\n\n"
+        +"Treatment: Not serious, the main methods used for posture correction, muscle relaxation and other treatments. Self-heating, clinical push and take. Press to rub the wind pool hole."
+      );
+    }
+
+    function show3(){
+      alert("Class: Cervical"+"\n\n"
+        +"Common symptoms: The loss of sensations in the limbs or the loss --- may be a symptom of nerve damage, Fever, Night sweat, Headache, Drowsiness or blurred consciousness"+"\n\n"
+        +"Cause: In most cases, neck pain is caused by sprains, muscle spasms, or other musculoskeletal injuries. Neck because of the high degree of activity, so prone to strain and excessive pull injuries, such as sprains caused by the crash. In addition, the neck serves as an important task to support the head. Poor posture can increase the burden on the neck. Therefore, neck pain, like back pain, is a common disease and is more common with age."+"\n\n"
+        +"Treatment: Avoiding activities that exacerbate symptoms, such as sitting for long periods of time with a computer, cell phone, or other electronic device, may help. It is important to maintain a good posture and meet human mechanics requirements when standing, sitting, or engaging in any activity. Patients should learn the correct way to stand and sit to prevent neck sprains. Patients sleeping sideways apply pillows to support the head and neck so that the head and neck remain in the middle (neither toward the bed nor towards the ceiling). Patients sleeping on their backs should use pillows to support their heads and necks, but do not raise them. Patients should avoid sleeping in a receding position. Patients can also wear neck braches (neck sleeves) to keep their neck straight and help relieve pain."
+      );
+    }
+
+    function show4(){
+      alert("Class: Lumbar"+"\n\n"
+        +"Common symptoms: Slow blood flow, blocked blood vessels, insufficient blood supply, muscle atrophy, muscle mass and other symptoms."+"\n\n"
+        +"Cause: Long-term ambush work, lumbar muscles in a stationary working state for a long time."+"\n\n"
+        +"Treatment: Every day adhere to waist movement, work frequent activities of the waist, so that the waist muscles frequent activity. Sometimes disc protrusity may not be completely prevented, but there are many ways to reduce the risk of occurrence:\n" +
+        "\n" +
+        "Aerobic exercise, such as swimming and walking, improves overall health and usually muscle strength.\n" +
+        "\n" +
+        "Strengthening and stretching of abdominal, hip and back muscles (core muscles) helps stabilize the spine and reduce stress on the disc (buffer spine) and ligaments (fixed spine).\n" +
+        "\n" +
+        "Muscle strength training includes pelvic tilt and abdominal bending training. Stretching exercises include knee-to-knee chest stretching. Stretching training may increase back pain in some patients and should be carried out with caution. In principle, any training that causes or increases back pain should be stopped. Training should be repeated until the muscles feel mild fatigue, but not complete fatigue. Breathing during each training session is important. People with back pain should consult a doctor before starting exercise."
+      );
+    }
+
+    function show5(){
+      alert("Class: Hand"+"\n\n"
+        +"Common symptoms: Tenosynovitis Carpal tunnel syndrome"+"\n\n"
+        +"Cause: Often use the keyboard and mouse, the wrist to undergo repeated excessive activity, it may appear puffy, so that the wrist tube of the positive nerve is compressed, index finger and middle finger pain, numbness, thumb muscle weakness, atrophy, wrist pain, finger flexibility"+"\n\n"
+        +"Treatment: When using the mouse, try not to hang the arm, it is best to find support at the elbow, reduce the strength of the arm. Take a break every hour or so, hold your fist, hold your finger, and pull your hand in the direction of your back. Or choose a grip, handball, etc. At the same time, also avoid cold hands."
+      );
+    }
+
+    function show6(){
+      alert("Class: Limb pain"+"\n\n"
+        +"Common symptoms: After sitting in front of the computer for a long time, unable to get up, walking difficulties, muscle soreness throughout the body, thighs, buttocks are relatively serious, walking knees and other leg muscles bending powerless to cause wrestling, usually have diarrhea symptoms. Mental drowsiness is easy to catch a cold, food is easy to starve, weight has a significant decline."+"\n\n"
+        +"Cause: The time and cause of onset; work requires long standing and long breaks in front of the computer. Lack of exercise, physical decline."+"\n\n"
+        +"Treatment: \n" +
+        "Exercise\n" +
+        "Strengthen and stretch muscles\n" +
+        "Maintain a healthy weight\n" +
+        "Maintain a good posture\n" +
+        "Use proper weight lifting\n" +
+        "Regular exercise is an effective way to reduce the risk of disc protrusity. Aerobic exercise and special muscle strengthening as well as stretching training are helpful."
+      );
+    }
+
+    function show7(){
+      alert("Class: Eyes"+"\n\n"
+        +"Common symptoms: Myopia irreversible, Eye fatigue"+"\n\n"
+        +"Cause: Eye fatigue mainly refers to the improper use of the eye or excessive use of the eye to cause eye muscle fatigue, and the appearance of blurred vision, dry eyes and other symptoms"+"\n\n"
+        +"Treatment: Every 1 hour of work, the eyes should rest for 2 minutes, at the same time, appropriate eye health exercises to relieve eye pressure."
+      );
+    }
+
+    function show8(){
+      alert("Class: Head"+"\n\n"
+        +"Common symptoms: Dizzy"+"\n\n"
+        +"Cause: Fatigue-induced dizziness may be caused by nerve disorders in the patient's brain, or by insufficient blood supply to the brain after excessive fatigue induces cerebrovascular spasms, and by elevated blood pressure."+"\n\n"
+        +"Treatment: If you want to alleviate the above problems, patients should rest more, avoid emotional agitation, in addition to the cause of treatment. For example, considering that it is caused by the patient's cerebrovascular neck tube, it is recommended to give the patient the use of drugs to dilation of cerebrovascular, improve blood circulation in the brain, improve dizziness symptoms."
+      );
+    }
+
+    function show9(){
+      alert("Class: Foot"+"\n\n"
+        +"Common symptoms: Tenosynovitis Carpal tunnel syndrome"+"\n\n"
+        +"Cause: Often use the keyboard and mouse, the wrist to undergo repeated excessive activity, it may appear puffy, so that the wrist tube of the positive nerve is compressed, index finger and middle finger pain, numbness, thumb muscle weakness, atrophy, wrist pain, finger flexibility"+"\n\n"
+        +"Treatment: When using the mouse, try not to hang the arm, it is best to find support at the elbow, reduce the strength of the arm. Take a break every hour or so, hold your fist, hold your finger, and pull your hand in the direction of your back. Or choose a grip, handball, etc. At the same time, also avoid cold hands."
+      );
+    }
+  </script>
+
+<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="scripts.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+</html>
