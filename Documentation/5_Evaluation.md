@@ -1,5 +1,5 @@
 # Evaluation
-#### Details of design evaluation
+### Details of design evaluation
 Our project evaluation majorly focuses on two parts: unit testing and user acceptance testing. 
 For unit testing, we first made test plan and then used tools like Jasmine and Karma to help us with actual testing script coding.
 
@@ -18,7 +18,8 @@ This is used more to get more detailed views and feelings towards our app , and 
 ![UAT1](https://i.imgur.com/zGuoKnR.jpg=centerme)
 ![UAT2](https://i.imgur.com/DOiGOYX.jpg=centerme)
 
-However, there are some limitations inherent in the technique we used. The questions in the questionnair might be leading （有引导性的）.
+**Limitation of techniques used**  
+Although questionnaires is an inexpensive, practical and the a very quick way to get results, it may bear some inherent limitations that may affect the credibility of the result. The most prominent ones are that respondents may have a hidden agenda where these participants may already have an  interest in our product, and so when they do fill in the questions, their answers are bound to be biased. Similarly, various aspects of the questionnaire design such as the wording, order , opened/ closed-ended type of questions could all play part in unconsciously channeling the participants into completing the questionnaires towards a biased result.
 
 #### Timeline of evaluation 
 -April 20th:    
@@ -35,7 +36,7 @@ Do final modification on webpage contents
 -May 11th:  
 Finish unit tesing  
 
-#### Unit/Functional testing
+### Unit/Functional testing
 To prevent software defects, our group uses Jasmine as well as KARMA to test our codes.  
 Functional testing plan:  
 1.Test body part mouse moveover event   
@@ -53,7 +54,7 @@ Other webpage functional checking:
 (3) Webpage load speed check. 
 
 
-#### User acceptance testing
+### User acceptance testing
 For user acceptance testing, our group choose to use quantitative method and focus on several criteria when designing and analyzing the questionnaire for our users, including the following:
 
 •	Web convenience level  
