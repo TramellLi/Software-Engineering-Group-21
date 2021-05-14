@@ -45,6 +45,7 @@ Functional testing plan:
 4.Test whether bar chart label correctly displayed  
 Code: 
 ![image](https://user-images.githubusercontent.com/78802279/118252714-fac65100-b4a0-11eb-8cf3-8e9fb54e095d.png)
+![image](https://user-images.githubusercontent.com/78802279/118256482-6a3e3f80-b4a5-11eb-99e6-190459d6ff6e.png)
 
 
 
