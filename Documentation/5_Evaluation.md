@@ -42,7 +42,9 @@ Functional testing plan:
 1.Test body part mouse moveover event   
 2.Test if comments are correctly displayed  
 3.Test user comment function  
-Code: （周五早传）
+4.Test whether bar chart label correctly displayed  
+Code: 
+![image](https://user-images.githubusercontent.com/78802279/118252714-fac65100-b4a0-11eb-8cf3-8e9fb54e095d.png)
 
 
 
