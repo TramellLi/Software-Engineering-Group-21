@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainBodyComponent } from './main-body.component';
+//import triggerEvent from 'trigger-event';
 
 describe('MainBodyComponent', () => {
   let component: MainBodyComponent;
@@ -10,7 +11,7 @@ describe('MainBodyComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ MainBodyComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +23,21 @@ describe('MainBodyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+//  let bodyPartsSpy: jasmine.Spy<jasmine.Func> | EventListener | EventListenerObject;
+//  beforeEach(() => {
+//       bodyPartsSpy = jasmine.createSpy('event');
+//  });
+
+//  it('dispatches onMouseOver event', () => {
+//    document.addEventListener('bodyParts.onMouseOver', bodyPartsSpy);
+
+//    const $trigger = document.querySelector('app-main-body');
+//    triggerEvent($trigger, 'onMouseOver');
+
+//    expect(bodyPartsSpy).toHaveBeenCalled();
+//  });
+
 });
+
+

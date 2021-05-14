@@ -10,7 +10,7 @@ describe('BarChartComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ BarChartComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +21,26 @@ describe('BarChartComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+});
+
+// tslint:disable-next-line:only-arrow-functions typedef
+describe('jasmine.objectContaining', function() {
+  let barChartLabels: { a: string; b: string; };
+
+  // tslint:disable-next-line:only-arrow-functions typedef
+  beforeEach(function() {
+    barChartLabels = {
+      a: 'Head',
+      b: 'Eyes',
+    };
+  });
+
+  // tslint:disable-next-line:only-arrow-functions typedef
+  it('matches objects with the expect key/value pairs', function() {
+    expect(barChartLabels).toEqual(jasmine.objectContaining({
+      b: 'Eyes'
+    }));
   });
 });

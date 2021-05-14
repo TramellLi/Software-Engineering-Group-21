@@ -14,7 +14,10 @@ PartModel.estimatedDocumentCount({}, (err,count) => {
   res.header("Content-Type",'application/json');
   var document = PartModel.find().lean().exec(function(err,docs){
    if(!err){
-
+     res.send(JSON.stringify(docs));
+     console.log(docs);
+     console.log('//////////////////////////////////////');
+     return docs;
    }
   });
 })
