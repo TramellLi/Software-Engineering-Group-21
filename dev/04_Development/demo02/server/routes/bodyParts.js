@@ -1,24 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const BodyPartsModel  = require('../model/BodyParts');
+const PartModel  = require('../model/BodyParts.js');
 
-/* GET Comments. */
+/* GET parts. */
 router.get('/', function (req, res) {
-  BodyPartsModel.estimatedDocumentCount({}, (err,count) => {
+PartModel.estimatedDocumentCount({}, (err,count) => {
     if (!err) {
-      console.log('From: get \'/\' >>>> Comments docu count : ' + count);
+        console.log('From: get \'/\' >>>> Part docu count : ' + count);
     } else {
-      throw err;
+        throw err;
     }
-  })
+})
   res.header("Content-Type",'application/json');
-  var document = BodyPartsModel.find().lean().exec(function(err,docs){
-    if(!err){
-      res.send(JSON.stringify(docs));
-      console.log(docs);
-      console.log('//////////////////////////////////////');
-      return docs;
-    }
+  var document = PartModel.find().lean().exec(function(err,docs){
+   if(!err){
+
+   }
   });
 })
 

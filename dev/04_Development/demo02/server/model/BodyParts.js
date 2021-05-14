@@ -8,10 +8,7 @@ var BodySchema = new Schema({
     _id: Number,
     partName: String,
     solution: String,
-    voteNumber: Number,
-    parentParts: [{
-        type: Number, ref: 'BodyPart'
-    }]
+    voteNumber: Number
 })
 
 // Create a BodyPartModel using BodySchema

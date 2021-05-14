@@ -5,14 +5,8 @@ var Schema = mongoose.Schema;
 
 // Create a CommentSchema
 var CommentSchema = new Schema({
-    addTime:{
-        type: Date,
-        default: Date.now
-    },
     content: String,
-    bodyPart: {
-        type: Number, ref: 'BodyPart'
-    }
+    bodyPart: Number
 })
 
 // Create a CommentModel using CommentSchema
