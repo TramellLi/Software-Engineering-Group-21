@@ -8,6 +8,9 @@ import { ElementRef } from '@angular/core';
 // import { NzMessageService } from 'ng-zorro-antd';
 import { ChangeDetectorRef } from '@angular/core';
 import {Observable} from 'rxjs';
+// import { BODYPARTS } from '../tempBody';
+
+
 
 @Component({
   selector: 'app-bar-chart',
@@ -60,6 +63,7 @@ export class BarChartComponent implements OnInit {
       backgroundColor: 'rgba(90,85,85,0.3)',
     },
   ];
+  public bodyParts: any = [];
 
   // @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective | undefined;
   // chart: BaseChartDirective;
@@ -69,11 +73,16 @@ export class BarChartComponent implements OnInit {
   title = '';
   indexOfBar = 0;
   tstString = '';
+  backValue: any = {
+    barChartLabels:  [],
+    barChartData: []
+  };
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.retrieveData();
     this.retrieveComments();
+    this.retrieveBodyParts();
     // this.clkbtn()
     // @ts-ignore
     // document.getElementById('myChart').ontimeupdate(this.clkbtn());
@@ -104,11 +113,29 @@ export class BarChartComponent implements OnInit {
         this.stats = data;
         // now let's update the fields
         console.log(data);
-        this.tstString += this.stats[0].content;
+        for (let i = 0; i < 6; i++) {
+          this.comments[i] = this.stats[i].content + '¬';
+        }
       },
       error => {
         console.log(error);
       });
+  }
+  // tslint:disable-next-line:typedef
+  retrieveBodyParts() {
+    this.dataService.getBodyParts().subscribe(
+      data => {
+        this.bodyParts = data;
+        // now let's update the fields
+        console.log('zzz' + data);
+        // for (let i = 0; i < 6; i++) {
+        //   this.comments[i] = this.bodyParts[i].content + '¬';
+        // }
+      },
+      error => {
+        console.log(error);
+      });
+    return this.bodyParts;
   }
 
   // tslint:disable-next-line:typedef
@@ -117,12 +144,22 @@ export class BarChartComponent implements OnInit {
     this.barChartData[0].data[this.indexOfBar]++;
     this.barChartLegend = false;
     this.changeDetectorRef.reattach();
-    this.retrieveComments();
+    // this.retrieveComments();
     this.barChartLegend = true;
+    this.backValue.barChartData = this.barChartData;
+    this.backValue.barChartLabels = this.barChartLabels;
+    // this.dataService.putAll(this.backValue).subscribe();
+    this.retrieveData();
     // this.update();
     // this.regionCharts.chartInstance.setOption(this.barChartData);
     // @ts-ignore
     // document.getElementById('myChart').ontimeupdate(this.clkbtn());
-    this.ngOnChange();
+    // this.ngOnChange();
   }
+
+  // tslint:disable-next-line:typedef
+  // submitComments(commentValue: HTMLInputElement) {
+  //   this.dataService.addComments( commentValue.value as any).subscribe();
+  //   this.ngOnChange();
+  // }
 }

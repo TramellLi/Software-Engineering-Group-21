@@ -17,13 +17,45 @@
 <body>
   <app-root id="app"></app-root>
   <script>
+    // const {BarChartComponent} = require("./app/bar-chart/bar-chart.component");
+    // import {BarChartComponent} from "./app/bar-chart/bar-chart.component";
+    // import {Observable} from "rxjs";
+
+    // const {HttpClient} = require("@angular/common/http");
+    // import {HttpClient} from "@angular/common/http";
+    //
+    // const {Observable} = require("rxjs");
+
+    // var bodyParts = [];
+    // var httpClient;
+    // var REST_API_SERVER_B = 'http://localhost:3000/BodyParts';
+    // function getBodyParts(){
+    //   return httpClient.get(REST_API_SERVER_B);
+    // }
+    // function retrieveBodyParts() {
+    //   getBodyParts().subscribe(
+    //     data => {
+    //       bodyParts = data;
+    //       // now let's update the fields
+    //       console.log('zzz' + data);
+    //       // for (let i = 0; i < 6; i++) {
+    //       //   this.comments[i] = this.bodyParts[i].content + '¬';
+    //       // }
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     });
+    // }
+    // retrieveBodyParts();
+
     window.onload = function(){
       adjust();
       // passInfo();
     }
+    // console.log('123' + bodyParts);
 
-
-
+    // console.log(this.barChartType);
+    // console.log('asd');
     function adjustPosition(position) {
       var myImage = document.getElementById("img1");
       if (typeof myImage.naturalWidth == "undefined") {
@@ -161,5 +193,6 @@
       );
     }
   </script>
+
 </body>
 </html>

@@ -25,18 +25,20 @@
   <strong>Comments:</strong>
   <hr/>
   <br/>
+  {{tstString}}
   <div *ngFor="let comment of comments">
     {{comment}}
+
     <br/>
   </div>
 
   <div style="position: absolute; left: 20px; top: 500px">
     <hr/>
-    <form name="inputComments" action="http://localhost:3000/" method="get">
-      <input type="text" size="15px">
+
+      <input #commentValue id="textBox" type="text" size="15px">
       &nbsp;
-      <input type="submit" >
-    </form>
+      <button>Submit</button>
+
 
   </div>
 <!--  <div id="tst" style="border: #46505a solid 1px; width: 100px; height: 100px">-->
