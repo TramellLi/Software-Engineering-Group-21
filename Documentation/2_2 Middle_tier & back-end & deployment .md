@@ -21,6 +21,30 @@ So we planned to use AJAX and its request & response framework:
         Success:function(data){…}
         });
 
+However, we ran across some issues when we tried to write multiple 'GET' requests in the front end (index.html) as javascript does not actually have multithreading.We might need to rely on Axios (axios.all() ,axios.spread() methods), but the time is running out and we have no chance to apply that in our code to get body parts data from backend. Therefore, we sacrificed a little bit and read the body parts info from json directly. 
+Axios framework we planned to use:
+
+        methods:{
+           getTset1 (data){
+           console.log('first')
+           return this.$axios({
+                 url:'...',
+                 method:'GET',
+                 params data
+               })
+        },
+           getTest2(data){
+               ...
+        },
+           getALL(){
+              var _this = this; 
+              this.$axios.all([_this.getAllTask(),_this.getAllCity()])
+              .then(_this.$axios.spread(function(allTask, allCity){
+                  console.log('all done')
+                  console.log('first',allTask)
+                  console.log('second',allCity)
+                  }))......
+
 As for server interaction with back-end, we have chosen to use ODM “Mongoose” to interact with the database as it is designed to work with asynchronous environment. It corresponds with our app’s demand for some asynchronous data transfer. 
 
         var mongoose = require (./db.js);
